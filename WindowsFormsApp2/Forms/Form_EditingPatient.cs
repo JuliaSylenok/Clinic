@@ -18,18 +18,49 @@ namespace WindowsFormsApp2.Forms
         {
             InitializeComponent();
             PopulateDataGridView();
-            
+            PopulateComboBoxes();
+
+
         }
+
+
+        private void PopulateComboBoxes()
+        {
+            // Заповнення комбобокса comboBox_Category
+            List<string> categories = Clinic.Instance.Services
+                .Select(service => service.Name)
+                .Distinct()
+                .ToList();
+            comboBox_Category.DataSource = categories;
+
+            // Подія вибору категорії
+            comboBox_Category.SelectedIndexChanged += (sender, e) =>
+            {
+                // Отримання вибраної категорії
+                string selectedCategory = comboBox_Category.SelectedItem.ToString();
+
+                // Фільтрація послуг за обраною категорією
+                List<string> services = Clinic.Instance.Services
+                    .Where(service => service.Name == selectedCategory)
+                    .Select(service => service.Description)
+                    .ToList();
+
+                // Заповнення комбобокса comboBox_Service знайденими послугами
+                comboBox_Service.DataSource = services;
+            };
+
+            // Заповнення комбобокса comboBox_Time
+            // Цей код припускає, що у вас є список часів, які ви хочете відобразити у комбобоксі
+            List<string> times = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
+            comboBox_Time.DataSource = times;
+        }
+
         private void PopulateDataGridView()
         {
             
-            // Отримати список всіх записів пацієнтів
-           // List<Appointment> appointments = Clinic.Instance.Appointments;
-
-            // Очистити DataGridView перед заповненням
+            
             dgvAppointmentsOfPatients.Rows.Clear();
 
-            // Додати стовпці у DataGridView
             dgvAppointmentsOfPatients.Columns.Add("Name", "ПІБ пацієнта");
             dgvAppointmentsOfPatients.Columns.Add("PhoneNumber", "Номер телефону пацієнта");
             dgvAppointmentsOfPatients.Columns.Add("Category", "Категорія запису");
@@ -56,7 +87,6 @@ namespace WindowsFormsApp2.Forms
             {
                 appointments = Clinic.Instance.Appointments;
             }
-            // Заповнити DataGridView інформацією про записи пацієнтів
             foreach (var appointment in appointments)
             {
                 string[] rowData = {
@@ -81,18 +111,18 @@ namespace WindowsFormsApp2.Forms
 
         private void btn_DeleteAppointment_Click(object sender, EventArgs e)
         {
-            // Перевірка, чи користувач обрав рядок для видалення
+            
             if (dgvAppointmentsOfPatients.SelectedRows.Count > 0)
             {
-                // Отримання обраного рядка
+                
                 DataGridViewRow selectedRow = dgvAppointmentsOfPatients.SelectedRows[0];
 
-                // Отримання значень з обраного рядка
+                
                 string userName = selectedRow.Cells["Name"].Value.ToString();
                 string date = selectedRow.Cells["Date"].Value.ToString();
                 string time = selectedRow.Cells["Time"].Value.ToString();
 
-                // Видалення запису про прийом за обраними датою та часом
+                
                 try
                 {
                     Administrator admin = new Administrator("Admin", "admin", "0000000000"); // Потрібно вказати дані адміністратора
@@ -100,21 +130,21 @@ namespace WindowsFormsApp2.Forms
 
                     if (success)
                     {
-                        // Отримання інформації про видалений запис
+                        
                         string deletedAppointmentInfo = $"Видалено запис: {userName}, {date}, {time}\n";
 
-                        // Отримання інформації про залишені записи
+                        
                         StringBuilder remainingAppointmentsInfo = new StringBuilder("Залишені записи:\n");
-                        Clinic.RemainingAppointments = Clinic.Instance.Appointments; // Присвоєння значення Clinic.RemainingAppointments
+                        Clinic.RemainingAppointments = Clinic.Instance.Appointments; 
                         foreach (var appointment in Clinic.RemainingAppointments)
                         {
                             remainingAppointmentsInfo.AppendLine($"{appointment.User.Name}, {appointment.Date}, {appointment.Time}");
                         }
 
-                        // Виведення повідомлення у MessageBox
+                        
                         MessageBox.Show($"Запис про прийом успішно видалено.\n\n{deletedAppointmentInfo}\n{remainingAppointmentsInfo}");
 
-                        ShowInfo(); // Оновлення DataGridView після видалення запису
+                        ShowInfo(); 
                     }
                 }
                 catch (Exception ex)
@@ -128,5 +158,34 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        private void btn_AddPatientWithAppointment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Отримання значень з елементів форми
+                string userName = textBox_Name.Text;
+                string category = comboBox_Category.SelectedItem.ToString();
+                string description = comboBox_Service.SelectedItem.ToString();
+                string appointmentDate = dateTimePicker_Date.Value.ToShortDateString();
+                string appointmentTime = comboBox_Time.SelectedItem.ToString();
+
+                // Виклик методу AddAppointment класу Administrator
+                Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                bool success = admin.AddAppointment(userName, description, appointmentDate, appointmentTime);
+
+                if (success)
+                {
+                    MessageBox.Show("Запис про прийом успішно додано.");
+                }
+                else
+                {
+                    MessageBox.Show("Помилка при додаванні запису про прийом.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Сталася помилка: {ex.Message}");
+            }
+        }
     }
 }

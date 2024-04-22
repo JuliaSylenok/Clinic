@@ -30,19 +30,19 @@
         {
             this.button4 = new System.Windows.Forms.Button();
             this.btn_DeleteAppointment = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
+            this.btn_AddPatientWithAppointment = new System.Windows.Forms.Button();
             this.dgvAppointmentsOfPatients = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.domainUpDown3 = new System.Windows.Forms.DomainUpDown();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.dateTimePicker_Date = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_Category = new System.Windows.Forms.ComboBox();
+            this.comboBox_Service = new System.Windows.Forms.ComboBox();
+            this.comboBox_Time = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentsOfPatients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,19 +75,20 @@
             this.btn_DeleteAppointment.UseVisualStyleBackColor = false;
             this.btn_DeleteAppointment.Click += new System.EventHandler(this.btn_DeleteAppointment_Click);
             // 
-            // btnAbout
+            // btn_AddPatientWithAppointment
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Location = new System.Drawing.Point(645, 186);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(132, 43);
-            this.btnAbout.TabIndex = 18;
-            this.btnAbout.Text = "Додати";
-            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btn_AddPatientWithAppointment.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_AddPatientWithAppointment.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_AddPatientWithAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddPatientWithAppointment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_AddPatientWithAppointment.ForeColor = System.Drawing.Color.White;
+            this.btn_AddPatientWithAppointment.Location = new System.Drawing.Point(645, 186);
+            this.btn_AddPatientWithAppointment.Name = "btn_AddPatientWithAppointment";
+            this.btn_AddPatientWithAppointment.Size = new System.Drawing.Size(132, 43);
+            this.btn_AddPatientWithAppointment.TabIndex = 18;
+            this.btn_AddPatientWithAppointment.Text = "Додати";
+            this.btn_AddPatientWithAppointment.UseVisualStyleBackColor = false;
+            this.btn_AddPatientWithAppointment.Click += new System.EventHandler(this.btn_AddPatientWithAppointment_Click);
             // 
             // dgvAppointmentsOfPatients
             // 
@@ -113,14 +114,14 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Пацієнт:";
             // 
-            // textBox5
+            // textBox_Name
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
-            this.textBox5.Location = new System.Drawing.Point(111, 25);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(293, 26);
-            this.textBox5.TabIndex = 33;
-            this.textBox5.Text = "ПІБ";
+            this.textBox_Name.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.textBox_Name.Location = new System.Drawing.Point(111, 25);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(293, 26);
+            this.textBox_Name.TabIndex = 33;
+            this.textBox_Name.Text = "ПІБ";
             // 
             // btnClose
             // 
@@ -145,15 +146,6 @@
             this.label1.Size = new System.Drawing.Size(258, 21);
             this.label1.TabIndex = 43;
             this.label1.Text = "Оберіть категорію послуги:";
-            // 
-            // domainUpDown2
-            // 
-            this.domainUpDown2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.domainUpDown2.Location = new System.Drawing.Point(16, 82);
-            this.domainUpDown2.Name = "domainUpDown2";
-            this.domainUpDown2.Size = new System.Drawing.Size(388, 26);
-            this.domainUpDown2.TabIndex = 42;
-            this.domainUpDown2.Text = "Обрати";
             // 
             // label3
             // 
@@ -185,52 +177,61 @@
             this.label4.TabIndex = 39;
             this.label4.Text = "Оберіть послугу:";
             // 
-            // domainUpDown3
+            // dateTimePicker_Date
             // 
-            this.domainUpDown3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.domainUpDown3.Location = new System.Drawing.Point(16, 136);
-            this.domainUpDown3.Name = "domainUpDown3";
-            this.domainUpDown3.Size = new System.Drawing.Size(388, 26);
-            this.domainUpDown3.TabIndex = 38;
-            this.domainUpDown3.Text = "Обрати";
+            this.dateTimePicker_Date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_Date.Location = new System.Drawing.Point(12, 193);
+            this.dateTimePicker_Date.MinDate = new System.DateTime(2024, 2, 17, 0, 0, 0, 0);
+            this.dateTimePicker_Date.Name = "dateTimePicker_Date";
+            this.dateTimePicker_Date.Size = new System.Drawing.Size(392, 26);
+            this.dateTimePicker_Date.TabIndex = 36;
             // 
-            // dateTimePicker2
+            // comboBox_Category
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(12, 193);
-            this.dateTimePicker2.MinDate = new System.DateTime(2024, 2, 17, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(392, 26);
-            this.dateTimePicker2.TabIndex = 36;
+            this.comboBox_Category.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Category.FormattingEnabled = true;
+            this.comboBox_Category.Location = new System.Drawing.Point(12, 83);
+            this.comboBox_Category.Name = "comboBox_Category";
+            this.comboBox_Category.Size = new System.Drawing.Size(392, 26);
+            this.comboBox_Category.TabIndex = 44;
             // 
-            // domainUpDown1
+            // comboBox_Service
             // 
-            this.domainUpDown1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.domainUpDown1.Location = new System.Drawing.Point(414, 137);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(200, 26);
-            this.domainUpDown1.TabIndex = 37;
-            this.domainUpDown1.Text = "Обрати";
+            this.comboBox_Service.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Service.FormattingEnabled = true;
+            this.comboBox_Service.Location = new System.Drawing.Point(12, 139);
+            this.comboBox_Service.Name = "comboBox_Service";
+            this.comboBox_Service.Size = new System.Drawing.Size(392, 26);
+            this.comboBox_Service.TabIndex = 45;
+            // 
+            // comboBox_Time
+            // 
+            this.comboBox_Time.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Time.FormattingEnabled = true;
+            this.comboBox_Time.Location = new System.Drawing.Point(421, 141);
+            this.comboBox_Time.Name = "comboBox_Time";
+            this.comboBox_Time.Size = new System.Drawing.Size(188, 26);
+            this.comboBox_Time.TabIndex = 46;
             // 
             // Form_EditingPatient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_Time);
+            this.Controls.Add(this.comboBox_Service);
+            this.Controls.Add(this.comboBox_Category);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.domainUpDown2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.domainUpDown3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.domainUpDown1);
+            this.Controls.Add(this.dateTimePicker_Date);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_DeleteAppointment);
-            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.btn_AddPatientWithAppointment);
             this.Controls.Add(this.dgvAppointmentsOfPatients);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -245,18 +246,18 @@
         #endregion
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_DeleteAppointment;
-        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btn_AddPatientWithAppointment;
         private System.Windows.Forms.DataGridView dgvAppointmentsOfPatients;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DomainUpDown domainUpDown2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DomainUpDown domainUpDown3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Date;
+        private System.Windows.Forms.ComboBox comboBox_Category;
+        private System.Windows.Forms.ComboBox comboBox_Service;
+        private System.Windows.Forms.ComboBox comboBox_Time;
     }
 }
