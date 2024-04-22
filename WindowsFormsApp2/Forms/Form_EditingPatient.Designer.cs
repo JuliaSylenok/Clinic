@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_DeleteAppointment = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.dgvAppointmentsOfPatients = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,19 +60,20 @@
             this.button4.Text = "Зберегти зміни";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_DeleteAppointment
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(507, 186);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 43);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Видалити";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_DeleteAppointment.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_DeleteAppointment.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_DeleteAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteAppointment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_DeleteAppointment.ForeColor = System.Drawing.Color.White;
+            this.btn_DeleteAppointment.Location = new System.Drawing.Point(507, 186);
+            this.btn_DeleteAppointment.Name = "btn_DeleteAppointment";
+            this.btn_DeleteAppointment.Size = new System.Drawing.Size(132, 43);
+            this.btn_DeleteAppointment.TabIndex = 20;
+            this.btn_DeleteAppointment.Text = "Видалити";
+            this.btn_DeleteAppointment.UseVisualStyleBackColor = false;
+            this.btn_DeleteAppointment.Click += new System.EventHandler(this.btn_DeleteAppointment_Click);
             // 
             // btnAbout
             // 
@@ -228,7 +229,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_DeleteAppointment);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.dgvAppointmentsOfPatients);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -243,7 +244,7 @@
 
         #endregion
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_DeleteAppointment;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.DataGridView dgvAppointmentsOfPatients;
         private System.Windows.Forms.Label label6;
