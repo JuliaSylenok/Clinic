@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClinicWFA.Clinic">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAACAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAACQAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicWFA.User">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicWFA.Service">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicWFA.RegisteredUser" Collapsed="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAQAAAAAAAAAAAAAAAAIAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClinicWFA.Appointment">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicWFA.Guest">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClinicWFA.Administrator">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgQECAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ClinicWFA.IRegisteredUser">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAQAAAAAAAAAAAAAAAAIAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Clinic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
