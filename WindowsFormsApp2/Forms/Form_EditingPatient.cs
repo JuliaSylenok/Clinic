@@ -160,31 +160,39 @@ namespace WindowsFormsApp2.Forms
 
         private void btn_AddPatientWithAppointment_Click(object sender, EventArgs e)
         {
+            // Отримання введених даних з елементів керування
+            string userName = textBox_Name.Text;
+            string category = comboBox_Category.SelectedItem.ToString();
+            string description = comboBox_Service.SelectedItem.ToString();
+            string time = comboBox_Time.SelectedItem.ToString();
+            string date = dateTimePicker_Date.Value.ToString("yyyy-MM-dd");
+
+            // Перевірка на введення усіх необхідних даних
+            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(category) ||
+                string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
+            {
+                MessageBox.Show("Будь ласка, введіть всі необхідні дані.");
+                return;
+            }
+
             try
             {
-                // Отримання значень з елементів форми
-                string userName = textBox_Name.Text;
-                string category = comboBox_Category.SelectedItem.ToString();
-                string description = comboBox_Service.SelectedItem.ToString();
-                string appointmentDate = dateTimePicker_Date.Value.ToShortDateString();
-                string appointmentTime = comboBox_Time.SelectedItem.ToString();
-
-                // Виклик методу AddAppointment класу Administrator
-                Administrator admin = new Administrator("Admin", "admin", "0000000000");
-                bool success = admin.AddAppointment(userName, description, appointmentDate, appointmentTime);
+                Administrator admin = new Administrator("Admin", "admin", "0000000000"); // Потрібно вказати дані адміністратора
+                bool success = admin.AddAppointment(userName, category, date, time);
 
                 if (success)
                 {
-                    MessageBox.Show("Запис про прийом успішно додано.");
+                    MessageBox.Show($"Призначення успішно додано для користувача {userName}.");
+                    ShowInfo(); // Оновлення DataGridView після додавання запису
                 }
                 else
                 {
-                    MessageBox.Show("Помилка при додаванні запису про прийом.");
+                    MessageBox.Show("Помилка при додаванні призначення.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Сталася помилка: {ex.Message}");
+                MessageBox.Show($"Помилка: {ex.Message}");
             }
         }
     }

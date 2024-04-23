@@ -81,36 +81,67 @@ namespace WindowsFormsApp2.Classes
             }
         }
 
+        //public bool AddAppointment(string userName, string serviceName, string date, string time)
+        //{
+        //    // Перевірка, чи час вже заброньований
+        //    if (Clinic.Instance.Appointments.Any(appointment => appointment.Date == date && appointment.Time == time))
+        //    {
+        //        throw new InvalidOperationException("Неможливо додати запис, час вже заброньовано!");
+        //    }
+
+        //    // Створення нового запису на прийом та додавання його до списку
+        //    var service = Clinic.Instance.Services.FirstOrDefault(s => s.Name == serviceName);
+        //    var user = Clinic.Instance.Users.FirstOrDefault(u => u.Name == userName);
+
+        //    if (service != null && user != null)
+        //    {
+        //        var appointment = new Appointment
+        //        {
+        //            Date = date,
+        //            Time = time,
+        //            Service = service,
+        //            User = user as RegisteredUser
+        //        };
+
+        //        Clinic.Instance.Appointments.Add(appointment);
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false; 
+        //    }
+        //}
         public bool AddAppointment(string userName, string serviceName, string date, string time)
         {
             // Перевірка, чи час вже заброньований
-            if (Clinic.Instance.Appointments.Any(appointment => appointment.Date == date && appointment.Time == time))
+            if (Clinic.RemainingAppointments.Any(appointment => appointment.Date == date && appointment.Time == time))
             {
                 throw new InvalidOperationException("Неможливо додати запис, час вже заброньовано!");
             }
 
-            // Створення нового запису на прийом та додавання його до списку
-            var service = Clinic.Instance.Services.FirstOrDefault(s => s.Name == serviceName);
-            var user = Clinic.Instance.Users.FirstOrDefault(u => u.Name == userName);
+            // Знаходження користувача з ім'ям userName у залишених записах
+            var user = Clinic.RemainingAppointments.FirstOrDefault(appointment => appointment.User.Name == userName)?.User;
 
-            if (service != null && user != null)
+            if (user != null)
             {
+                // Створення нового запису на прийом та додавання його до списку
                 var appointment = new Appointment
                 {
                     Date = date,
                     Time = time,
-                    Service = service,
-                    User = user as RegisteredUser
+                    Service = Clinic.Instance.Services.First(s => s.Name == serviceName),
+                    User = user
                 };
 
-                Clinic.Instance.Appointments.Add(appointment);
+                Clinic.RemainingAppointments.Add(appointment);
                 return true;
             }
             else
             {
-                return false; 
+                throw new Exception($"Користувач з ім'ям {userName} не знайдений.");
             }
         }
+
 
         public bool DeleteAppointment(string date, string time)
         {

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView_Services = new System.Windows.Forms.DataGridView();
+            this.btnAddService = new System.Windows.Forms.Button();
+            this.btnEditingService = new System.Windows.Forms.Button();
+            this.btnDeleteService = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_EditingPrice = new System.Windows.Forms.TextBox();
+            this.tb_EditingDescription = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +43,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tb_EditingCategory = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Services)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -61,60 +61,60 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dataGridView1
+            // dataGridView_Services
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 188);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 198);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView_Services.AllowUserToAddRows = false;
+            this.dataGridView_Services.AllowUserToDeleteRows = false;
+            this.dataGridView_Services.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Services.Location = new System.Drawing.Point(23, 188);
+            this.dataGridView_Services.Name = "dataGridView_Services";
+            this.dataGridView_Services.ReadOnly = true;
+            this.dataGridView_Services.RowHeadersWidth = 51;
+            this.dataGridView_Services.RowTemplate.Height = 24;
+            this.dataGridView_Services.Size = new System.Drawing.Size(754, 198);
+            this.dataGridView_Services.TabIndex = 4;
             // 
-            // btnAbout
+            // btnAddService
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Location = new System.Drawing.Point(645, 392);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(132, 43);
-            this.btnAbout.TabIndex = 5;
-            this.btnAbout.Text = "Додати";
-            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAddService.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnAddService.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnAddService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddService.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddService.ForeColor = System.Drawing.Color.White;
+            this.btnAddService.Location = new System.Drawing.Point(645, 392);
+            this.btnAddService.Name = "btnAddService";
+            this.btnAddService.Size = new System.Drawing.Size(132, 43);
+            this.btnAddService.TabIndex = 5;
+            this.btnAddService.Text = "Додати";
+            this.btnAddService.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEditingService
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(507, 392);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Редагувати";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditingService.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEditingService.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEditingService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditingService.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnEditingService.ForeColor = System.Drawing.Color.White;
+            this.btnEditingService.Location = new System.Drawing.Point(507, 392);
+            this.btnEditingService.Name = "btnEditingService";
+            this.btnEditingService.Size = new System.Drawing.Size(132, 43);
+            this.btnEditingService.TabIndex = 6;
+            this.btnEditingService.Text = "Редагувати";
+            this.btnEditingService.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnDeleteService
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(369, 392);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 43);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Видалити";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDeleteService.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeleteService.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeleteService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteService.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteService.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteService.Location = new System.Drawing.Point(369, 392);
+            this.btnDeleteService.Name = "btnDeleteService";
+            this.btnDeleteService.Size = new System.Drawing.Size(132, 43);
+            this.btnDeleteService.TabIndex = 7;
+            this.btnDeleteService.Text = "Видалити";
+            this.btnDeleteService.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -130,21 +130,21 @@
             this.button4.Text = "Зберегти зміни";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // tb_EditingPrice
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(432, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 28);
-            this.textBox1.TabIndex = 10;
+            this.tb_EditingPrice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_EditingPrice.Location = new System.Drawing.Point(432, 137);
+            this.tb_EditingPrice.Name = "tb_EditingPrice";
+            this.tb_EditingPrice.Size = new System.Drawing.Size(100, 28);
+            this.tb_EditingPrice.TabIndex = 10;
             // 
-            // textBox2
+            // tb_EditingDescription
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(231, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 28);
-            this.textBox2.TabIndex = 11;
+            this.tb_EditingDescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_EditingDescription.Location = new System.Drawing.Point(231, 65);
+            this.tb_EditingDescription.Name = "tb_EditingDescription";
+            this.tb_EditingDescription.Size = new System.Drawing.Size(301, 28);
+            this.tb_EditingDescription.TabIndex = 11;
             // 
             // textBox3
             // 
@@ -217,21 +217,20 @@
             this.textBox4.Size = new System.Drawing.Size(100, 28);
             this.textBox4.TabIndex = 17;
             // 
-            // comboBox1
+            // tb_EditingCategory
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(303, 29);
-            this.comboBox1.TabIndex = 19;
+            this.tb_EditingCategory.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tb_EditingCategory.Location = new System.Drawing.Point(231, 27);
+            this.tb_EditingCategory.Name = "tb_EditingCategory";
+            this.tb_EditingCategory.Size = new System.Drawing.Size(301, 28);
+            this.tb_EditingCategory.TabIndex = 19;
             // 
             // Form_EditingServices
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tb_EditingCategory);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
@@ -239,20 +238,20 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_EditingDescription);
+            this.Controls.Add(this.tb_EditingPrice);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAbout);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnDeleteService);
+            this.Controls.Add(this.btnEditingService);
+            this.Controls.Add(this.btnAddService);
+            this.Controls.Add(this.dataGridView_Services);
             this.Controls.Add(this.btnClose);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_EditingServices";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Editing";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Services)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,13 +260,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView_Services;
+        private System.Windows.Forms.Button btnAddService;
+        private System.Windows.Forms.Button btnEditingService;
+        private System.Windows.Forms.Button btnDeleteService;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_EditingPrice;
+        private System.Windows.Forms.TextBox tb_EditingDescription;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -275,6 +274,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tb_EditingCategory;
     }
 }

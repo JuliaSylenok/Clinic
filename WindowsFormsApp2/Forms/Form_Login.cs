@@ -42,7 +42,7 @@ namespace WindowsFormsApp2.Forms
                         this.Hide();
                         using (Form1 fw = new Form1()) // інша форма, на якій є кнопка button1
                         {
-                            Clinic.NameNow = name;
+                            //Clinic.NameNow = name;
                             fw.DisableButtonForAdmin();
                             fw.ShowDialog();
                             //потрібно зробити кновпку button1 недоступною для натискання
