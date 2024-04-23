@@ -73,6 +73,7 @@
             this.dataGridView_Services.RowTemplate.Height = 24;
             this.dataGridView_Services.Size = new System.Drawing.Size(754, 198);
             this.dataGridView_Services.TabIndex = 4;
+            this.dataGridView_Services.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Services_CellClick);
             // 
             // btnAddService
             // 
@@ -101,6 +102,7 @@
             this.btnEditingService.TabIndex = 6;
             this.btnEditingService.Text = "Редагувати";
             this.btnEditingService.UseVisualStyleBackColor = false;
+            this.btnEditingService.Click += new System.EventHandler(this.btnEditingService_Click);
             // 
             // btnDeleteService
             // 
