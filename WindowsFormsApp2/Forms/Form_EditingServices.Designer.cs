@@ -117,6 +117,7 @@
             this.btnDeleteService.TabIndex = 7;
             this.btnDeleteService.Text = "Видалити";
             this.btnDeleteService.UseVisualStyleBackColor = false;
+            this.btnDeleteService.Click += new System.EventHandler(this.btnDeleteService_Click);
             // 
             // button4
             // 

@@ -95,6 +95,34 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        private void btnDeleteService_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_Services.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_Services.SelectedRows[0];
+                int serviceIndex = selectedRow.Index;
 
+                try
+                {
+                    Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                    bool success = admin.DeleteService(serviceIndex);
+
+                    if (success)
+                    {
+                        MessageBox.Show("Послугу успішно видалено.");
+                        dataGridView_Services.Rows.Clear();
+                        InitializeDataGridView(); 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Оберіть послугу для видалення.");
+            }
+        }
     }
 }
