@@ -124,5 +124,29 @@ namespace WindowsFormsApp2.Forms
                 MessageBox.Show("Оберіть послугу для видалення.");
             }
         }
+
+        private void btnAddService_Click(object sender, EventArgs e)
+        {
+            string name = tb_EditingCategory.Text;
+            string description = tb_EditingDescription.Text;
+            decimal price = Convert.ToDecimal(tb_EditingPrice.Text);
+
+            try
+            {
+                Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                bool success = admin.AddService(name, description, price);
+
+                if (success)
+                {
+                    MessageBox.Show("Новий сервіс успішно додано.");
+                    dataGridView_Services.Rows.Clear();
+                    InitializeDataGridView();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+            }
+        }
     }
 }

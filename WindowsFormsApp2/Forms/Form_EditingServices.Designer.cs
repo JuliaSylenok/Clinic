@@ -88,6 +88,7 @@
             this.btnAddService.TabIndex = 5;
             this.btnAddService.Text = "Додати";
             this.btnAddService.UseVisualStyleBackColor = false;
+            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
             // 
             // btnEditingService
             // 
