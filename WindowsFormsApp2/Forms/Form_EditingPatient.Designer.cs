@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_DeleteAppointment = new System.Windows.Forms.Button();
             this.btn_AddPatientWithAppointment = new System.Windows.Forms.Button();
             this.dgvAppointmentsOfPatients = new System.Windows.Forms.DataGridView();
@@ -43,22 +42,9 @@
             this.comboBox_Category = new System.Windows.Forms.ComboBox();
             this.comboBox_Service = new System.Windows.Forms.ComboBox();
             this.comboBox_Time = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentsOfPatients)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(645, 112);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 55);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Зберегти зміни";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // btn_DeleteAppointment
             // 
@@ -106,22 +92,23 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(21, 26);
+            this.label6.Location = new System.Drawing.Point(8, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 21);
+            this.label6.Size = new System.Drawing.Size(96, 23);
             this.label6.TabIndex = 34;
             this.label6.Text = "Пацієнт:";
             // 
             // textBox_Name
             // 
-            this.textBox_Name.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.textBox_Name.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_Name.Location = new System.Drawing.Point(111, 25);
             this.textBox_Name.Name = "textBox_Name";
-            this.textBox_Name.Size = new System.Drawing.Size(293, 26);
+            this.textBox_Name.Size = new System.Drawing.Size(293, 28);
             this.textBox_Name.TabIndex = 33;
             this.textBox_Name.Text = "ПІБ";
+            this.textBox_Name.Click += new System.EventHandler(this.textBox_Name_Click);
             // 
             // btnClose
             // 
@@ -140,84 +127,97 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(19, 57);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(8, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 21);
+            this.label1.Size = new System.Drawing.Size(295, 23);
             this.label1.TabIndex = 43;
             this.label1.Text = "Оберіть категорію послуги:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(417, 112);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(443, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 21);
+            this.label3.Size = new System.Drawing.Size(218, 23);
             this.label3.TabIndex = 41;
             this.label3.Text = "Оберіть час запису:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(15, 168);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(443, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 21);
+            this.label5.Size = new System.Drawing.Size(230, 23);
             this.label5.TabIndex = 40;
             this.label5.Text = "Оберіть дату запису:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(12, 112);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(8, 115);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 21);
+            this.label4.Size = new System.Drawing.Size(185, 23);
             this.label4.TabIndex = 39;
             this.label4.Text = "Оберіть послугу:";
             // 
             // dateTimePicker_Date
             // 
-            this.dateTimePicker_Date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker_Date.Location = new System.Drawing.Point(12, 193);
+            this.dateTimePicker_Date.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_Date.Location = new System.Drawing.Point(447, 84);
             this.dateTimePicker_Date.MinDate = new System.DateTime(2024, 2, 17, 0, 0, 0, 0);
             this.dateTimePicker_Date.Name = "dateTimePicker_Date";
-            this.dateTimePicker_Date.Size = new System.Drawing.Size(392, 26);
+            this.dateTimePicker_Date.Size = new System.Drawing.Size(314, 28);
             this.dateTimePicker_Date.TabIndex = 36;
             // 
             // comboBox_Category
             // 
-            this.comboBox_Category.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Category.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_Category.FormattingEnabled = true;
             this.comboBox_Category.Location = new System.Drawing.Point(12, 83);
             this.comboBox_Category.Name = "comboBox_Category";
-            this.comboBox_Category.Size = new System.Drawing.Size(392, 26);
+            this.comboBox_Category.Size = new System.Drawing.Size(392, 29);
             this.comboBox_Category.TabIndex = 44;
+            this.comboBox_Category.SelectedIndexChanged += new System.EventHandler(this.comboBox_Category_SelectedIndexChanged);
             // 
             // comboBox_Service
             // 
-            this.comboBox_Service.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Service.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_Service.FormattingEnabled = true;
             this.comboBox_Service.Location = new System.Drawing.Point(12, 139);
             this.comboBox_Service.Name = "comboBox_Service";
-            this.comboBox_Service.Size = new System.Drawing.Size(392, 26);
+            this.comboBox_Service.Size = new System.Drawing.Size(392, 29);
             this.comboBox_Service.TabIndex = 45;
+            this.comboBox_Service.SelectedIndexChanged += new System.EventHandler(this.comboBox_Service_SelectedIndexChanged);
             // 
             // comboBox_Time
             // 
-            this.comboBox_Time.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic);
+            this.comboBox_Time.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_Time.FormattingEnabled = true;
-            this.comboBox_Time.Location = new System.Drawing.Point(421, 141);
+            this.comboBox_Time.Location = new System.Drawing.Point(447, 139);
             this.comboBox_Time.Name = "comboBox_Time";
-            this.comboBox_Time.Size = new System.Drawing.Size(188, 26);
+            this.comboBox_Time.Size = new System.Drawing.Size(314, 29);
             this.comboBox_Time.TabIndex = 46;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(17, 218);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(422, 23);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Оберіть послугу, яку бажаєте видалити";
             // 
             // Form_EditingPatient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_Time);
             this.Controls.Add(this.comboBox_Service);
             this.Controls.Add(this.comboBox_Category);
@@ -229,13 +229,13 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_Name);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_DeleteAppointment);
             this.Controls.Add(this.btn_AddPatientWithAppointment);
             this.Controls.Add(this.dgvAppointmentsOfPatients);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_EditingPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "\'";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentsOfPatients)).EndInit();
             this.ResumeLayout(false);
@@ -244,7 +244,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_DeleteAppointment;
         private System.Windows.Forms.Button btn_AddPatientWithAppointment;
         private System.Windows.Forms.DataGridView dgvAppointmentsOfPatients;
@@ -259,5 +258,6 @@
         private System.Windows.Forms.ComboBox comboBox_Category;
         private System.Windows.Forms.ComboBox comboBox_Service;
         private System.Windows.Forms.ComboBox comboBox_Time;
+        private System.Windows.Forms.Label label2;
     }
 }

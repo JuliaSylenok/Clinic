@@ -74,5 +74,15 @@ namespace WindowsFormsApp2.Forms
             }
         
         }
+
+        private void textBoxLogin_Click(object sender, EventArgs e)
+        {
+            textBoxLogin.Text = null;
+        }
+
+        private void textBoxPassword_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.Text = null;
+        }
     }
 }

@@ -87,9 +87,9 @@
             this.btnMakeAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeAppointment.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMakeAppointment.ForeColor = System.Drawing.Color.White;
-            this.btnMakeAppointment.Location = new System.Drawing.Point(307, 26);
+            this.btnMakeAppointment.Location = new System.Drawing.Point(325, 6);
             this.btnMakeAppointment.Name = "btnMakeAppointment";
-            this.btnMakeAppointment.Size = new System.Drawing.Size(309, 31);
+            this.btnMakeAppointment.Size = new System.Drawing.Size(280, 55);
             this.btnMakeAppointment.TabIndex = 4;
             this.btnMakeAppointment.Text = "Записатися на прийом до лікаря";
             this.btnMakeAppointment.UseVisualStyleBackColor = false;
@@ -112,9 +112,9 @@
             this.btnEditAppiontment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditAppiontment.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditAppiontment.ForeColor = System.Drawing.Color.White;
-            this.btnEditAppiontment.Location = new System.Drawing.Point(20, 26);
+            this.btnEditAppiontment.Location = new System.Drawing.Point(20, 6);
             this.btnEditAppiontment.Name = "btnEditAppiontment";
-            this.btnEditAppiontment.Size = new System.Drawing.Size(281, 31);
+            this.btnEditAppiontment.Size = new System.Drawing.Size(258, 55);
             this.btnEditAppiontment.TabIndex = 5;
             this.btnEditAppiontment.Text = "Перенести/Відмінити запис";
             this.btnEditAppiontment.UseVisualStyleBackColor = false;

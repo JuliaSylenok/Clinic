@@ -108,17 +108,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(121, 52);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(95, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(422, 22);
+            this.label2.Size = new System.Drawing.Size(470, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Редагувати послуги, що надаються клінікою";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnEditPatient);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -145,10 +144,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(184, 60);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(158, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 22);
+            this.label3.Size = new System.Drawing.Size(305, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Редагувати записи пацієнтів";
             // 

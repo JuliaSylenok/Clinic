@@ -134,6 +134,8 @@ namespace WindowsFormsApp2.Forms
 
                     // Виведення інформації у MessageBox
                     MessageBox.Show($"{cancelledAppointmentInfo}\n\n{remainingAppointmentsInfo}");
+
+                    Clinic.Instance.Appointments = Clinic.RemainingAppointments;
                 }
                 else
                 {
@@ -215,6 +217,7 @@ namespace WindowsFormsApp2.Forms
 
                             // Виведення повідомлення про успішне перенесення запису
                             MessageBox.Show($"Запис на прийом перенесено на {newDate} о {newTime}.");
+                           
                         }
                         else
                         {
@@ -240,6 +243,8 @@ namespace WindowsFormsApp2.Forms
                 MessageBox.Show("Будь ласка, виберіть запис на прийом для перенесення.");
             }
         }
+
+       
     }
 
 }

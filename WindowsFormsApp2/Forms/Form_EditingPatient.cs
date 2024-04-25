@@ -49,9 +49,7 @@ namespace WindowsFormsApp2.Forms
                 comboBox_Service.DataSource = services;
             };
 
-            // Заповнення комбобокса comboBox_Time
-            // Цей код припускає, що у вас є список часів, які ви хочете відобразити у комбобоксі
-            List<string> times = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
+                        List<string> times = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
             comboBox_Time.DataSource = times;
         }
 
@@ -68,7 +66,6 @@ namespace WindowsFormsApp2.Forms
             dgvAppointmentsOfPatients.Columns.Add("Date", "Дата запису");
             dgvAppointmentsOfPatients.Columns.Add("Time", "Час запису");
 
-            //dgvAppointmentsOfPatients.Columns.Add("Price", "Ціна послуги");
             ShowInfo();
             
         }
@@ -96,7 +93,6 @@ namespace WindowsFormsApp2.Forms
                     appointment.Service.Description,
                     appointment.Date,
                     appointment.Time
-                    //appointment.Service.Price.ToString()
                 };
                 dgvAppointmentsOfPatients.Rows.Add(rowData);
             }
@@ -125,7 +121,7 @@ namespace WindowsFormsApp2.Forms
                 
                 try
                 {
-                    Administrator admin = new Administrator("Admin", "admin", "0000000000"); // Потрібно вказати дані адміністратора
+                    Administrator admin = new Administrator("Admin", "admin", "0000000000"); 
                     bool success = admin.DeleteAppointment(date, time);
 
                     if (success)
@@ -160,14 +156,14 @@ namespace WindowsFormsApp2.Forms
 
         private void btn_AddPatientWithAppointment_Click(object sender, EventArgs e)
         {
-            // Отримання введених даних з елементів керування
+            
             string userName = textBox_Name.Text;
             string category = comboBox_Category.SelectedItem.ToString();
             string description = comboBox_Service.SelectedItem.ToString();
             string time = comboBox_Time.SelectedItem.ToString();
             string date = dateTimePicker_Date.Value.ToString("yyyy-MM-dd");
 
-            // Перевірка на введення усіх необхідних даних
+            
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(category) ||
                 string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
             {
@@ -177,13 +173,13 @@ namespace WindowsFormsApp2.Forms
 
             try
             {
-                Administrator admin = new Administrator("Admin", "admin", "0000000000"); // Потрібно вказати дані адміністратора
+                Administrator admin = new Administrator("Admin", "admin", "0000000000");
                 bool success = admin.AddAppointment(userName, category, date, time);
 
                 if (success)
                 {
                     MessageBox.Show($"Призначення успішно додано для користувача {userName}.");
-                    ShowInfo(); // Оновлення DataGridView після додавання запису
+                    ShowInfo(); 
                 }
                 else
                 {
@@ -194,6 +190,24 @@ namespace WindowsFormsApp2.Forms
             {
                 MessageBox.Show($"Помилка: {ex.Message}");
             }
+        }
+
+        private void textBox_Name_Click(object sender, EventArgs e)
+        {
+            textBox_Name.Text = null;
+        }
+
+        private void comboBox_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_Service.Text= null;
+            comboBox_Time.Text = null;
+            dateTimePicker_Date.Text = null;
+        }
+
+        private void comboBox_Service_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_Time.Text= null;
+            dateTimePicker_Date.Text= null;
         }
     }
 }

@@ -106,38 +106,53 @@
             // 
             // tbPassword
             // 
+            this.tbPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPassword.Location = new System.Drawing.Point(238, 285);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(268, 32);
+            this.tbPassword.Size = new System.Drawing.Size(268, 28);
             this.tbPassword.TabIndex = 7;
+            this.tbPassword.Text = "Введіть";
+            this.tbPassword.Click += new System.EventHandler(this.tbPassword_Click);
             // 
             // tbPhone
             // 
+            this.tbPhone.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPhone.Location = new System.Drawing.Point(238, 204);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(268, 32);
+            this.tbPhone.Size = new System.Drawing.Size(268, 28);
             this.tbPhone.TabIndex = 6;
+            this.tbPhone.Text = "+38(0ХХ)-ХХХХХХХ";
+            this.tbPhone.Click += new System.EventHandler(this.tbPhone_Click);
             // 
             // tbSurname
             // 
+            this.tbSurname.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbSurname.Location = new System.Drawing.Point(238, 155);
             this.tbSurname.Name = "tbSurname";
-            this.tbSurname.Size = new System.Drawing.Size(268, 32);
+            this.tbSurname.Size = new System.Drawing.Size(268, 28);
             this.tbSurname.TabIndex = 5;
+            this.tbSurname.Text = "Введіть";
+            this.tbSurname.Click += new System.EventHandler(this.tbSurname_Click);
             // 
             // tbPatronymic
             // 
+            this.tbPatronymic.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPatronymic.Location = new System.Drawing.Point(238, 107);
             this.tbPatronymic.Name = "tbPatronymic";
-            this.tbPatronymic.Size = new System.Drawing.Size(268, 32);
+            this.tbPatronymic.Size = new System.Drawing.Size(268, 28);
             this.tbPatronymic.TabIndex = 4;
+            this.tbPatronymic.Text = "Введіть";
+            this.tbPatronymic.Click += new System.EventHandler(this.tbPatronymic_Click);
             // 
             // tbName
             // 
+            this.tbName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbName.Location = new System.Drawing.Point(238, 59);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(268, 32);
+            this.tbName.Size = new System.Drawing.Size(268, 28);
             this.tbName.TabIndex = 3;
+            this.tbName.Text = "Введіть";
+            this.tbName.Click += new System.EventHandler(this.tbName_Click);
             // 
             // label1
             // 
@@ -185,6 +200,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "\'";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -67,21 +67,23 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPassword.Location = new System.Drawing.Point(18, 180);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(382, 32);
+            this.textBoxPassword.Size = new System.Drawing.Size(382, 28);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Text = "Введіть пароль";
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.Location = new System.Drawing.Point(17, 87);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(382, 32);
+            this.textBoxLogin.Size = new System.Drawing.Size(382, 28);
             this.textBoxLogin.TabIndex = 2;
             this.textBoxLogin.Text = "ПІБ\r\n";
+            this.textBoxLogin.Click += new System.EventHandler(this.textBoxLogin_Click);
             // 
             // label2
             // 

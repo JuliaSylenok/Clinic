@@ -17,6 +17,10 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
+            UC_Home uh = new UC_Home();
+            addControls(uh);
+            btnMyReception.Visible = false;
+            btnEditing.Visible = false;
         }
 
         private void addControls(UserControl uc)
@@ -54,11 +58,10 @@ namespace WindowsFormsApp2
         {
             if (btnLogin.Text == "Увійти")
             {
-                this.Hide();
+                //this.Hide();
                 using (Form_Login fw = new Form_Login())
                 {
                     fw.ShowDialog();
-                    //this.Close();
                 }
             }
             else 
@@ -94,15 +97,17 @@ namespace WindowsFormsApp2
             btnEditing.Visible = false;
             btnLogin.Text = "Вихід";
             btnLogin.Visible = true;
+            btnMyReception.Visible = true;
         }
 
         public void DisableButtonForAdmin ()
         {
+            btnEditing.Visible = true;
             btnAbout.Visible = false;
             btnMyReception.Visible = false;
             btnRegistration.Visible = false;
             btnLogin.Visible = false;
-            btnHome.Visible = false;
+            btnHome.Visible = true;
         }
 
 

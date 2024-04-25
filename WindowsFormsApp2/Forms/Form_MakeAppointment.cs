@@ -14,7 +14,6 @@ namespace WindowsFormsApp2.Forms
 {
     public partial class Form_MakeAppointment : Form
     {
-        private RegisteredUser currentUser;
         // Оголошуємо дані для комбо-боксів
         private Dictionary<string, List<string>> servicesByCategory = new Dictionary<string, List<string>>
         {
@@ -43,22 +42,18 @@ namespace WindowsFormsApp2.Forms
         {
             InitializeComponent();
             FillComboBoxes();
+            dateTimePicker_Date.Text = null;
         }
         private void FillComboBoxes()
         {
-            // Заповнюємо комбо-бокс категорій
             comboBox_Category.Items.AddRange(servicesByCategory.Keys.ToArray());
-
-            // Обробник події при зміні вибору категорії
             comboBox_Category.SelectedIndexChanged += (sender, e) =>
             {
                 string selectedCategory = comboBox_Category.SelectedItem.ToString();
-                // Заповнюємо комбо-бокс послуг відповідно до вибраної категорії
                 comboBox_Service.Items.Clear();
                 comboBox_Service.Items.AddRange(servicesByCategory[selectedCategory].ToArray());
             };
 
-            // Заповнюємо комбо-бокс з часами
             comboBox_Time.Items.AddRange(timesByHour.Keys.ToArray());
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -67,14 +62,11 @@ namespace WindowsFormsApp2.Forms
         }
         private void btn_Appoinment_Click(object sender, EventArgs e)
         {
-            // Отримайте дані з комбо-боксів і dateTimePicker
             string category = comboBox_Category.Text;
             string description = comboBox_Service.Text;
             string appointmentDate = dateTimePicker_Date.Value.ToShortDateString();
             string appointmentTime = comboBox_Time.Text;
             RegisteredUser currentUser = new RegisteredUser(Clinic.NameNow, Clinic.Password, Clinic.PhoneNumber);
-
-            // Вибір списку записів на прийоми залежно від наявності залишених записів
             List<Appointment> appointments;
             if (Clinic.RemainingAppointments != null && Clinic.RemainingAppointments.Any())
             {
@@ -85,14 +77,13 @@ namespace WindowsFormsApp2.Forms
                 appointments = Clinic.Instance.Appointments;
             }
 
-            // Виклик методу BookAppointment поточного користувача
             bool success = currentUser.BookAppointment(category, description, appointmentDate, appointmentTime, appointments);
 
             if (success)
             {
                 MessageBox.Show("Appointment booked successfully.");
                 this.Hide();
-                using (Form1 fw = new Form1()) // інша форма, на якій є кнопка button1
+                using (Form1 fw = new Form1()) 
                 {
                     fw.DisableButtonForRegisteredUser();
                     fw.ShowDialog();
@@ -105,7 +96,14 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
-
-        
+        private void comboBox_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Category.SelectedIndex >= 0)
+            {
+                comboBox_Service.Text = null;
+                comboBox_Time.Text = null;
+                dateTimePicker_Date.Text = null;
+            }
+        }
     }
 }

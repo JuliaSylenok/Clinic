@@ -24,23 +24,19 @@ namespace WindowsFormsApp2.Classes
 
         public bool Register(string name, string password, string phoneNumber)
         {
-            if (name.Length < 1 || name.Length > 50)
+            
+            if (password.Length < 6 || password.Length > 20)
             {
-                throw new ArgumentException("Name must be between 1 and 50 characters long. {name.Length}");
-            }
-
-            if (password.Length < 1 || password.Length > 20)
-            {
-                throw new ArgumentException("Password must be between 1 and 20 characters long and contain only alphanumeric characters.");
+                throw new ArgumentException("Пароль не може бути менше 6 символів або більше 20 символів.");
             }
             if (phoneNumber.Length != 10 || phoneNumber[0] != '0')
             {
-                throw new ArgumentException("Phone number must be 10 characters long and start with '0'.");
+                throw new ArgumentException("Номера телефону не існує.");
             }
-            if (!phoneNumber.All(char.IsDigit))
-            {
-                throw new ArgumentException("Phone number must contain only digits.");
-            }
+            //if (!phoneNumber.All(char.IsDigit))
+            //{
+            //    throw new ArgumentException("Phone number must contain only digits.");
+            //}
 
             string userData = $"{name},{password},{phoneNumber}";
             AppendToFile(@"C:\VARIANT 19\2 course\Curse\WindowsFormsApp2\WindowsFormsApp2\users.txt", userData);

@@ -148,5 +148,20 @@ namespace WindowsFormsApp2.Forms
                 MessageBox.Show($"Помилка: {ex.Message}");
             }
         }
+
+        private void tb_EditingCategory_Click(object sender, EventArgs e)
+        {
+            tb_EditingCategory.Text = null;
+        }
+
+        private void tb_EditingDescription_Click(object sender, EventArgs e)
+        {
+            tb_EditingDescription.Text = null;
+        }
+
+        private void tb_EditingPrice_Click(object sender, EventArgs e)
+        {
+            tb_EditingPrice.Text = null;
+        }
     }
 }
