@@ -83,11 +83,11 @@
     <Compile Include="Classes\RegisteredUser.cs" />
     <Compile Include="Classes\Service.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_EditingAppointment.cs">
       <SubType>Form</SubType>
@@ -151,8 +151,8 @@
     <Compile Include="UserControls\UC_MyReception.Designer.cs">
       <DependentUpon>UC_MyReception.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_EditingAppointment.resx">
       <DependentUpon>Form_EditingAppointment.cs</DependentUpon>

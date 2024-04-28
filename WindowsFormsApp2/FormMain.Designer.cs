@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -163,14 +163,22 @@
         }
 
         #endregion
-
+        
+        //Панель, що містить кнопки керування 
         private System.Windows.Forms.Panel panelRight;
+        //Панель для використання UserControls
         private System.Windows.Forms.Panel panelConteiner;
+        //Кнопка, яка реалізує перехід між формою FormMain та Form_Login
         private System.Windows.Forms.Button btnLogin;
+        //Кнопка, яка реалізує появу UserControl - UC_AboutUs на місці панелі panelConteiner
         private System.Windows.Forms.Button btnAbout;
+        //Кнопка, яка реалізує появу UserControl - UC_Home на місці панелі panelConteiner
         private System.Windows.Forms.Button btnHome;
+        //Кнопка, яка реалізує перехід між формою FormMain та Form_Registration 
         private System.Windows.Forms.Button btnRegistration;
+        //Кнопка, яка реалізує появу UserControl - UC_MyReception на місці панелі panelConteiner
         private System.Windows.Forms.Button btnMyReception;
+        //Кнопка, яка реалізує появу UserControl - UC_Editing на місці панелі panelConteiner
         private System.Windows.Forms.Button btnEditing;
     }
 }

@@ -14,6 +14,7 @@ namespace WindowsFormsApp2.Forms
 {
     public partial class Form_EditingPatient : Form
     {
+        //Ініціалізація
         public Form_EditingPatient()
         {
             InitializeComponent();
@@ -23,40 +24,32 @@ namespace WindowsFormsApp2.Forms
 
         }
 
-
+        //Ініціалізація полів
         private void PopulateComboBoxes()
         {
-            // Заповнення комбобокса comboBox_Category
             List<string> categories = Clinic.Instance.Services
                 .Select(service => service.Name)
                 .Distinct()
                 .ToList();
             comboBox_Category.DataSource = categories;
-
-            // Подія вибору категорії
             comboBox_Category.SelectedIndexChanged += (sender, e) =>
             {
-                // Отримання вибраної категорії
                 string selectedCategory = comboBox_Category.SelectedItem.ToString();
-
-                // Фільтрація послуг за обраною категорією
                 List<string> services = Clinic.Instance.Services
                     .Where(service => service.Name == selectedCategory)
                     .Select(service => service.Description)
                     .ToList();
 
-                // Заповнення комбобокса comboBox_Service знайденими послугами
                 comboBox_Service.DataSource = services;
             };
 
-                        List<string> times = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
+                        List<string> times = new List<string> { "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
             comboBox_Time.DataSource = times;
         }
 
+        //Ініціалізація полів таблиці
         private void PopulateDataGridView()
         {
-            
-            
             dgvAppointmentsOfPatients.Rows.Clear();
 
             dgvAppointmentsOfPatients.Columns.Add("Name", "ПІБ пацієнта");
@@ -70,6 +63,7 @@ namespace WindowsFormsApp2.Forms
             
         }
 
+        //Заповнення полів таблиці
         private void ShowInfo()
         {
             dgvAppointmentsOfPatients.Rows.Clear();
@@ -98,13 +92,13 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
-
-
+        //Закриття проограми
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Реалізує видалення запису користувача
         private void btn_DeleteAppointment_Click(object sender, EventArgs e)
         {
             
@@ -154,6 +148,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Реалізує додавання запису коритсувача
         private void btn_AddPatientWithAppointment_Click(object sender, EventArgs e)
         {
             
@@ -192,6 +187,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Очищення полів
         private void textBox_Name_Click(object sender, EventArgs e)
         {
             textBox_Name.Text = null;

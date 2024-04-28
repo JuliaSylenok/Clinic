@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
+            this.labelSurname = new System.Windows.Forms.Label();
+            this.labelPatronymic = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
             this.tbPatronymic = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
             this.btnRegistration = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBox
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.tbPassword);
-            this.groupBox1.Controls.Add(this.tbPhone);
-            this.groupBox1.Controls.Add(this.tbSurname);
-            this.groupBox1.Controls.Add(this.tbPatronymic);
-            this.groupBox1.Controls.Add(this.tbName);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnRegistration);
-            this.groupBox1.Location = new System.Drawing.Point(108, 45);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 397);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Реєстрація";
+            this.groupBox.Controls.Add(this.labelPassword);
+            this.groupBox.Controls.Add(this.labelPhone);
+            this.groupBox.Controls.Add(this.labelSurname);
+            this.groupBox.Controls.Add(this.labelPatronymic);
+            this.groupBox.Controls.Add(this.tbPassword);
+            this.groupBox.Controls.Add(this.tbPhone);
+            this.groupBox.Controls.Add(this.tbSurname);
+            this.groupBox.Controls.Add(this.tbPatronymic);
+            this.groupBox.Controls.Add(this.tbName);
+            this.groupBox.Controls.Add(this.labelName);
+            this.groupBox.Controls.Add(this.btnRegistration);
+            this.groupBox.Location = new System.Drawing.Point(108, 45);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(614, 397);
+            this.groupBox.TabIndex = 2;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Реєстрація";
             // 
-            // label6
+            // labelPassword
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(144, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 23);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Пароль:";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPassword.Location = new System.Drawing.Point(144, 285);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(90, 23);
+            this.labelPassword.TabIndex = 8;
+            this.labelPassword.Text = "Пароль:";
             // 
-            // label5
+            // labelPhone
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(38, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(195, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Номер телефону:";
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPhone.Location = new System.Drawing.Point(38, 204);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(195, 23);
+            this.labelPhone.TabIndex = 8;
+            this.labelPhone.Text = "Номер телефону:";
             // 
-            // label4
+            // labelSurname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(119, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Прізвище:";
+            this.labelSurname.AutoSize = true;
+            this.labelSurname.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSurname.Location = new System.Drawing.Point(119, 155);
+            this.labelSurname.Name = "labelSurname";
+            this.labelSurname.Size = new System.Drawing.Size(112, 23);
+            this.labelSurname.TabIndex = 8;
+            this.labelSurname.Text = "Прізвище:";
             // 
-            // label2
+            // labelPatronymic
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(96, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "По батькові:";
+            this.labelPatronymic.AutoSize = true;
+            this.labelPatronymic.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPatronymic.Location = new System.Drawing.Point(96, 107);
+            this.labelPatronymic.Name = "labelPatronymic";
+            this.labelPatronymic.Size = new System.Drawing.Size(137, 23);
+            this.labelPatronymic.TabIndex = 8;
+            this.labelPatronymic.Text = "По батькові:";
             // 
             // tbPassword
             // 
@@ -154,15 +154,15 @@
             this.tbName.Text = "Введіть";
             this.tbName.Click += new System.EventHandler(this.tbName_Click);
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(180, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ім\'я:";
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.Location = new System.Drawing.Point(180, 59);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(53, 23);
+            this.labelName.TabIndex = 2;
+            this.labelName.Text = "Ім\'я:";
             // 
             // btnRegistration
             // 
@@ -196,31 +196,39 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(822, 483);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "\'";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        
+        //Групує всі компоненти
+        private System.Windows.Forms.GroupBox groupBox;
+
+        //Повідоблення для користувача
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelPhone;
+        private System.Windows.Forms.Label labelSurname;
+        private System.Windows.Forms.Label labelPatronymic;
+        private System.Windows.Forms.Label labelName;
+        
+        //Поля, які має заповнити користувач (ПІБ,номер телефону, пароль)
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.TextBox tbPatronymic;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label1;
+        //Кнопка яка реалізує мотод Register класу Guest
         private System.Windows.Forms.Button btnRegistration;
+        //Закриття форми Form_Registration.cs
         private System.Windows.Forms.Button btnClose;
     }
 }

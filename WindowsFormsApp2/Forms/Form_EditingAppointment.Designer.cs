@@ -32,11 +32,11 @@
             this.btnCancelAppointment = new System.Windows.Forms.Button();
             this.btnRescheduleAppointment = new System.Windows.Forms.Button();
             this.dgwMyAppointments = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.labelData = new System.Windows.Forms.Label();
             this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
             this.comboBox_Time = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMyAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,25 +99,25 @@
             this.dgwMyAppointments.TabIndex = 36;
             this.dgwMyAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwMyAppointments_CellContentClick);
             // 
-            // label3
+            // labelTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(35, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(399, 23);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Оберіть час, на який хочете пенести:";
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTime.Location = new System.Drawing.Point(35, 95);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(399, 23);
+            this.labelTime.TabIndex = 56;
+            this.labelTime.Text = "Оберіть час, на який хочете пенести:";
             // 
-            // label5
+            // labelData
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(35, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(425, 23);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "Оберіть дату, на яку хочете перенести:";
+            this.labelData.AutoSize = true;
+            this.labelData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelData.Location = new System.Drawing.Point(35, 24);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(425, 23);
+            this.labelData.TabIndex = 55;
+            this.labelData.Text = "Оберіть дату, на яку хочете перенести:";
             // 
             // dateTimePickerData
             // 
@@ -137,25 +137,25 @@
             this.comboBox_Time.Size = new System.Drawing.Size(421, 29);
             this.comboBox_Time.TabIndex = 57;
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(28, 232);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(494, 23);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Оберіть запис, який хочете пенести/видалити:";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label.Location = new System.Drawing.Point(28, 232);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(494, 23);
+            this.label.TabIndex = 58;
+            this.label.Text = "Оберіть запис, який хочете пенести/видалити:";
             // 
             // Form_EditingAppointment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.comboBox_Time);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelTime);
+            this.Controls.Add(this.labelData);
             this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCancelAppointment);
@@ -175,14 +175,22 @@
 
         #endregion
 
+        //Закриття форми
         private System.Windows.Forms.Button btnClose;
+        //Реалізує перенесення запису користуваач на іншу дату та/або час
         private System.Windows.Forms.Button btnCancelAppointment;
+        
+        //Реалізує видалення запису користувача на прийом
         private System.Windows.Forms.Button btnRescheduleAppointment;
         private System.Windows.Forms.DataGridView dgwMyAppointments;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        
+        //Повідомлення коритсувачу
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelData;
+        private System.Windows.Forms.Label label;
+
+        //Поля, які потрібно заповнити користувачу
         private System.Windows.Forms.DateTimePicker dateTimePickerData;
         private System.Windows.Forms.ComboBox comboBox_Time;
-        private System.Windows.Forms.Label label1;
     }
 }

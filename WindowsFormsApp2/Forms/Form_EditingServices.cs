@@ -13,11 +13,14 @@ namespace WindowsFormsApp2.Forms
 {
     public partial class Form_EditingServices : Form
     {
+        //Ініціалізація
         public Form_EditingServices()
         {
             InitializeComponent();
             PopulateDataGridView();
         }
+        
+        //Оновлення даних у DataGridView
         private void PopulateDataGridView()
         {
             
@@ -30,6 +33,7 @@ namespace WindowsFormsApp2.Forms
             InitializeDataGridView();
         }
 
+        //Ініціалізація полів таблиці
         private void InitializeDataGridView()
         {
             foreach (var service in Clinic.Instance.Services)
@@ -42,20 +46,20 @@ namespace WindowsFormsApp2.Forms
                 dataGridView_Services.Rows.Add(rowData);
             }
         }
-
+        
+        //Закриття форми
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Реалізує метод EditService класу Admin - редагування сервісу
         private void btnEditingService_Click(object sender, EventArgs e)
         {
             if (dataGridView_Services.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView_Services.SelectedRows[0];
                 int serviceIndex = selectedRow.Index;
-
-                // Зчитання нових значень з текстових полів
                 string newName = tb_EditingCategory.Text;
                 string newDescription = tb_EditingDescription.Text;
                 decimal newPrice = Convert.ToDecimal(tb_EditingPrice.Text);
@@ -83,6 +87,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Подія обрання поля таблиці
         private void dataGridView_Services_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -95,6 +100,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Реалізує метод DeleteService класу Admin - видалення сервісу
         private void btnDeleteService_Click(object sender, EventArgs e)
         {
             if (dataGridView_Services.SelectedRows.Count > 0)
@@ -125,6 +131,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Реалізує метод AddService класу Admin - додавання сервісу
         private void btnAddService_Click(object sender, EventArgs e)
         {
             string name = tb_EditingCategory.Text;
@@ -149,6 +156,7 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
+        //Очищення полів
         private void tb_EditingCategory_Click(object sender, EventArgs e)
         {
             tb_EditingCategory.Text = null;

@@ -14,19 +14,21 @@ namespace WindowsFormsApp2.Forms
 {
     public partial class Form_Registration : Form
     {
+        //Ініціалізація форми
         public Form_Registration()
         {
             InitializeComponent();
         }
-
+        
+        //Закриття форми
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //реалізує мотод Register класу Guest - реєстрація користувача в системі
         private void btnRegistration_Click(object sender, EventArgs e)
         {
-            // Отримати дані з текстових полів форми
             string name1 = tbSurname.Text;
             string name2 = tbName.Text;
             string name3 = tbPatronymic.Text;
@@ -63,8 +65,6 @@ namespace WindowsFormsApp2.Forms
             }
             string name = name1 + "_" + name2 +"_"+ name3;
             
-
-            // Викликати метод Register
             try
             {
                 Guest guest = new Guest();
@@ -78,23 +78,23 @@ namespace WindowsFormsApp2.Forms
                 if (ex.Message == "Номера телефону не існує.") tbPhone.Text = "+38(0ХХ)-ХХХХХХХ";
                 return;
             }
-            // Зберігаємо ім'я користувача у статичних полях класу Clinic
             Clinic.NameNow = name.Replace("_", " "); ;
             Clinic.Password = password;
             Clinic.PhoneNumber = phoneNumber;
 
             ClearTextBoxes();
             this.Hide();
-            using (Form1 fw = new Form1()) // інша форма, на якій є кнопка button1
+            using (FormMain fw = new FormMain())
             {
 
                 fw.DisableButtonForRegisteredUser();
                 fw.ShowDialog();
-                //потрібно зробити кновпку button1 недоступною для натискання
+                
             }
             
         }
 
+        //Очищення полів для вводу даних
         private void ClearTextBoxes()
         {
             tbSurname.Text = "";

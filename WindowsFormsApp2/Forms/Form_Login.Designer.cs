@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBox
             // 
-            this.groupBox1.Controls.Add(this.buttonLogin);
-            this.groupBox1.Controls.Add(this.textBoxPassword);
-            this.groupBox1.Controls.Add(this.textBoxLogin);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(328, 75);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 340);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Вхід в систему";
+            this.groupBox.Controls.Add(this.buttonLogin);
+            this.groupBox.Controls.Add(this.textBoxPassword);
+            this.groupBox.Controls.Add(this.textBoxLogin);
+            this.groupBox.Controls.Add(this.labelPassword);
+            this.groupBox.Controls.Add(this.labelName);
+            this.groupBox.Location = new System.Drawing.Point(328, 75);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(416, 340);
+            this.groupBox.TabIndex = 0;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Вхід в систему";
             // 
             // buttonLogin
             // 
@@ -85,34 +85,34 @@
             this.textBoxLogin.Text = "ПІБ\r\n";
             this.textBoxLogin.Click += new System.EventHandler(this.textBoxLogin_Click);
             // 
-            // label2
+            // labelPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Пароль:";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(22, 144);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(90, 23);
+            this.labelPassword.TabIndex = 1;
+            this.labelPassword.Text = "Пароль:";
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Логін:";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(22, 49);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(68, 23);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Логін:";
             // 
-            // label3
+            // label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label3.Location = new System.Drawing.Point(40, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(254, 34);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Приватна клініка";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label.Location = new System.Drawing.Point(40, 196);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(254, 34);
+            this.label.TabIndex = 1;
+            this.label.Text = "Приватна клініка";
             // 
             // btnClose
             // 
@@ -134,29 +134,38 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(822, 483);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.groupBox);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "\'";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+        
+        //Групує всі компоненти
+        private System.Windows.Forms.GroupBox groupBox;
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLogin;
+        //Поля, які має заповити користувач (ПІБ/Пароль)
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+
+        //Повідомлення користувачу
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label;
+
+        //Реалізує метод AuthenticateUser класу Gueat - вхід користувача в систему
+        private System.Windows.Forms.Button buttonLogin;
+
+        //Закриття форми
         private System.Windows.Forms.Button btnClose;
     }
 }

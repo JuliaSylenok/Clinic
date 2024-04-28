@@ -12,14 +12,16 @@ namespace WindowsFormsApp2.UserControls
 {
     public partial class UC_AboutUs : UserControl
     {
+        //Ініціалізація
         public UC_AboutUs()
         {
             InitializeComponent();
         }
-
-        private void button_Exit_Click(object sender, EventArgs e)
+        //Закриття програми
+        private void button_Exit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
     }
 }

@@ -14,16 +14,19 @@ namespace WindowsFormsApp2.Forms
 {
     public partial class Form_Login : Form
     {
+        //Ініціалізація
         public Form_Login()
         {
             InitializeComponent();
         }
 
+        //Закриття форми
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Реалізує метод AuthenticateUser класу Gueat - вхід користувача в систему
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string name = textBoxLogin.Text.Trim();
@@ -33,35 +36,32 @@ namespace WindowsFormsApp2.Forms
             {
                 Guest guest = new Guest();
                 string result = guest.AuthenticateUser(name, password);
-
-                // Обробка результату аутентифікації
                 switch (result)
                 {
                     case "admin":
                         MessageBox.Show("Ви успішно увійшли як адміністратор.");
                         this.Hide();
-                        using (Form1 fw = new Form1()) // інша форма, на якій є кнопка button1
+                        using (FormMain fw = new FormMain()) 
                         {
-                            //Clinic.NameNow = name;
                             fw.DisableButtonForAdmin();
                             fw.ShowDialog();
-                            //потрібно зробити кновпку button1 недоступною для натискання
                         }
                         break;
                     case "registered":
                         MessageBox.Show("Ви успішно увійшли як зареєстрований користувач.");
 
                         this.Hide();
-                        using (Form1 fw = new Form1()) // інша форма, на якій є кнопка button1
+                        using (FormMain fw = new FormMain()) 
                         {
 
                             fw.DisableButtonForRegisteredUser();
                             fw.ShowDialog();
-                            //потрібно зробити кновпку button1 недоступною для натискання
                         }
                         break;
                     case "not registered":
                         MessageBox.Show("Користувача з таким логіном та паролем не знайдено.");
+                        textBoxLogin.Text = "ПІБ";
+                        textBoxPassword.Text = "Введіть пароль";
                         break;
                     default:
                         MessageBox.Show("Невідома помилка під час аутентифікації.");
@@ -75,14 +75,16 @@ namespace WindowsFormsApp2.Forms
         
         }
 
+        //Очищення полів
         private void textBoxLogin_Click(object sender, EventArgs e)
         {
             textBoxLogin.Text = null;
         }
-
         private void textBoxPassword_Click(object sender, EventArgs e)
         {
             textBoxPassword.Text = null;
         }
+
+        
     }
 }

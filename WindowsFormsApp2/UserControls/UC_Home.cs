@@ -18,7 +18,8 @@ namespace WindowsFormsApp2.UserControls
     public partial class UC_Home : UserControl
     {
         Clinic clinic = Clinic.Instance;
-
+        
+        //Ініціалізація UserControl
         public UC_Home()
         {
             InitializeComponent();
@@ -28,8 +29,7 @@ namespace WindowsFormsApp2.UserControls
             LoadServices();
         }
        
-
-
+        //Функція для заповнення DatagridView наявними сервісам
         private void LoadServices()
         {
             
@@ -50,7 +50,8 @@ namespace WindowsFormsApp2.UserControls
                 dataGridViewServices.Rows.Add(data); 
             }
         }
-
+        
+        //Закриття програми
         private void button_Exit_Click(object sender, EventArgs e)
         {
             

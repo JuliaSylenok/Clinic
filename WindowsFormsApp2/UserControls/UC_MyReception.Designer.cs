@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMyReception = new System.Windows.Forms.Panel();
             this.button_Exit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMyReception = new System.Windows.Forms.Label();
             this.btnMakeAppointment = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelButtons = new System.Windows.Forms.Panel();
             this.btnEditAppiontment = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelYourReception = new System.Windows.Forms.Panel();
+            this.labelYourReception = new System.Windows.Forms.Label();
             this.dgwMyAppointments = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelMyReception.SuspendLayout();
+            this.panelButtons.SuspendLayout();
+            this.panelYourReception.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMyAppointments)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMyReception
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button_Exit);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 45);
-            this.panel1.TabIndex = 0;
+            this.panelMyReception.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panelMyReception.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMyReception.Controls.Add(this.button_Exit);
+            this.panelMyReception.Controls.Add(this.labelMyReception);
+            this.panelMyReception.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMyReception.Location = new System.Drawing.Point(0, 0);
+            this.panelMyReception.Name = "panelMyReception";
+            this.panelMyReception.Size = new System.Drawing.Size(629, 45);
+            this.panelMyReception.TabIndex = 0;
             // 
             // button_Exit
             // 
@@ -70,16 +70,16 @@
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
-            // label1
+            // labelMyReception
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 27);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Мої записи";
+            this.labelMyReception.AutoSize = true;
+            this.labelMyReception.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMyReception.ForeColor = System.Drawing.Color.White;
+            this.labelMyReception.Location = new System.Drawing.Point(4, 6);
+            this.labelMyReception.Name = "labelMyReception";
+            this.labelMyReception.Size = new System.Drawing.Size(142, 27);
+            this.labelMyReception.TabIndex = 1;
+            this.labelMyReception.Text = "Мої записи";
             // 
             // btnMakeAppointment
             // 
@@ -95,16 +95,16 @@
             this.btnMakeAppointment.UseVisualStyleBackColor = false;
             this.btnMakeAppointment.Click += new System.EventHandler(this.btnMakeAppointment_Click);
             // 
-            // panel2
+            // panelButtons
             // 
-            this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.btnMakeAppointment);
-            this.panel2.Controls.Add(this.btnEditAppiontment);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 408);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(629, 75);
-            this.panel2.TabIndex = 1;
+            this.panelButtons.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelButtons.Controls.Add(this.btnMakeAppointment);
+            this.panelButtons.Controls.Add(this.btnEditAppiontment);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButtons.Location = new System.Drawing.Point(0, 408);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(629, 75);
+            this.panelButtons.TabIndex = 1;
             // 
             // btnEditAppiontment
             // 
@@ -120,26 +120,26 @@
             this.btnEditAppiontment.UseVisualStyleBackColor = false;
             this.btnEditAppiontment.Click += new System.EventHandler(this.btnEditAppiontment_Click);
             // 
-            // panel3
+            // panelYourReception
             // 
-            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 45);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(629, 50);
-            this.panel3.TabIndex = 2;
+            this.panelYourReception.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelYourReception.Controls.Add(this.labelYourReception);
+            this.panelYourReception.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelYourReception.Location = new System.Drawing.Point(0, 45);
+            this.panelYourReception.Name = "panelYourReception";
+            this.panelYourReception.Size = new System.Drawing.Size(629, 50);
+            this.panelYourReception.TabIndex = 2;
             // 
-            // label2
+            // labelYourReception
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(16, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ваші записи на прийом:";
+            this.labelYourReception.AutoSize = true;
+            this.labelYourReception.Font = new System.Drawing.Font("Century Gothic", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelYourReception.ForeColor = System.Drawing.Color.Black;
+            this.labelYourReception.Location = new System.Drawing.Point(16, 15);
+            this.labelYourReception.Name = "labelYourReception";
+            this.labelYourReception.Size = new System.Drawing.Size(232, 22);
+            this.labelYourReception.TabIndex = 2;
+            this.labelYourReception.Text = "Ваші записи на прийом:";
             // 
             // dgwMyAppointments
             // 
@@ -161,31 +161,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.Controls.Add(this.dgwMyAppointments);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelYourReception);
+            this.Controls.Add(this.panelButtons);
+            this.Controls.Add(this.panelMyReception);
             this.Name = "UC_MyReception";
             this.Size = new System.Drawing.Size(629, 483);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelMyReception.ResumeLayout(false);
+            this.panelMyReception.PerformLayout();
+            this.panelButtons.ResumeLayout(false);
+            this.panelYourReception.ResumeLayout(false);
+            this.panelYourReception.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMyAppointments)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        
+        //Панель на якій розміщено labelMyReception
+        private System.Windows.Forms.Panel panelMyReception;
+        //Панель на якій розміщено кнопки btnMakeAppointment, btnEditAppiontment
+        private System.Windows.Forms.Panel panelButtons;
+        //Повідомлення з інформацію для користувача
+        private System.Windows.Forms.Label labelMyReception;
+        //Реалізує перехід між формами FormMain та Form_MakeAppointment 
         private System.Windows.Forms.Button btnMakeAppointment;
+        //Реалізує перехід між формами FormMain та Form_EditingAppointment
         private System.Windows.Forms.Button btnEditAppiontment;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        //Панель на якій розміщено labelYourReception
+        private System.Windows.Forms.Panel panelYourReception;
+        //Повідомлення з інформацію для користувача
+        private System.Windows.Forms.Label labelYourReception;
+        //Таблиця з переліком користувацьких записів на прийом
         private System.Windows.Forms.DataGridView dgwMyAppointments;
+        //Кнопка для виходу з програми
         private System.Windows.Forms.Button button_Exit;
     }
 }
