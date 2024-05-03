@@ -81,6 +81,12 @@ namespace WindowsFormsApp2.Forms
                 dateTimePicker_Date.Text = null;
                 return;
             }
+            DateTime selectedDateTime = dateTimePicker_Date.Value.Date.Add(TimeSpan.Parse(appointmentTime));
+            if (selectedDateTime < DateTime.Now)
+            {
+                MessageBox.Show("Запис на прийом не пройшов успішно! Обраний час вже минув.");
+                return;
+            }
             if (description.Length <2)
             {
                 MessageBox.Show("Запис на прийом не пройшов! Заповіть всі поля!");
@@ -110,7 +116,7 @@ namespace WindowsFormsApp2.Forms
             }
             else
             {
-                MessageBox.Show("Запис на прийом не пройшов успішно! Оьеріть іншу дату або час.");
+                MessageBox.Show("Запис на прийом не пройшов успішно! Оберіть іншу дату або час.");
             }
         }
 

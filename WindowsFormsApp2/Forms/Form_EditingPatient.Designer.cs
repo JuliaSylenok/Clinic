@@ -80,6 +80,7 @@
             // 
             this.dgvAppointmentsOfPatients.AllowUserToAddRows = false;
             this.dgvAppointmentsOfPatients.AllowUserToDeleteRows = false;
+            this.dgvAppointmentsOfPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAppointmentsOfPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAppointmentsOfPatients.Location = new System.Drawing.Point(21, 244);
             this.dgvAppointmentsOfPatients.Name = "dgvAppointmentsOfPatients";
@@ -191,6 +192,7 @@
             this.comboBox_Service.Name = "comboBox_Service";
             this.comboBox_Service.Size = new System.Drawing.Size(392, 29);
             this.comboBox_Service.TabIndex = 45;
+            this.comboBox_Service.Text = "Оберіть";
             this.comboBox_Service.SelectedIndexChanged += new System.EventHandler(this.comboBox_Service_SelectedIndexChanged);
             // 
             // comboBox_Time

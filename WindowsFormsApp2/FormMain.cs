@@ -74,8 +74,8 @@ namespace WindowsFormsApp2
             }
             else 
             {
-                
-                FormMain fm1= new FormMain();
+                MessageBox.Show($"Ви вийшли з акаунту.");
+                FormMain fm1 = new FormMain();
                 fm1.btnLogin.Text = "Увійти";
                 fm1.btnRegistration.Visible = true;
                 fm1.btnHome.Visible = true;
@@ -119,6 +119,10 @@ namespace WindowsFormsApp2
             btnMyReception.Visible = false;
             btnRegistration.Visible = false;
             btnLogin.Visible = false;
+
+            btnLogin.Text = "Вихід";
+            btnLogin.Visible = true;
+
             btnHome.Visible = true;
         }
 

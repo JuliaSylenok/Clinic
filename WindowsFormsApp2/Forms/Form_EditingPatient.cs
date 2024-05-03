@@ -43,7 +43,7 @@ namespace WindowsFormsApp2.Forms
                 comboBox_Service.DataSource = services;
             };
 
-                        List<string> times = new List<string> { "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
+            List<string> times = new List<string> { "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00" };
             comboBox_Time.DataSource = times;
         }
 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp2.Forms
             dgvAppointmentsOfPatients.Columns.Add("Time", "Час запису");
 
             ShowInfo();
-            
+
         }
 
         //Заповнення полів таблиці
@@ -101,40 +101,40 @@ namespace WindowsFormsApp2.Forms
         //Реалізує видалення запису користувача
         private void btn_DeleteAppointment_Click(object sender, EventArgs e)
         {
-            
+
             if (dgvAppointmentsOfPatients.SelectedRows.Count > 0)
             {
-                
+
                 DataGridViewRow selectedRow = dgvAppointmentsOfPatients.SelectedRows[0];
 
-                
+
                 string userName = selectedRow.Cells["Name"].Value.ToString();
                 string date = selectedRow.Cells["Date"].Value.ToString();
                 string time = selectedRow.Cells["Time"].Value.ToString();
 
-                
+
                 try
                 {
-                    Administrator admin = new Administrator("Admin", "admin", "0000000000"); 
+                    Administrator admin = new Administrator("Admin", "admin", "0000000000");
                     bool success = admin.DeleteAppointment(date, time);
 
                     if (success)
                     {
-                        
+
                         string deletedAppointmentInfo = $"Видалено запис: {userName}, {date}, {time}\n";
 
-                        
+
                         StringBuilder remainingAppointmentsInfo = new StringBuilder("Залишені записи:\n");
-                        Clinic.RemainingAppointments = Clinic.Instance.Appointments; 
+                        Clinic.RemainingAppointments = Clinic.Instance.Appointments;
                         foreach (var appointment in Clinic.RemainingAppointments)
                         {
                             remainingAppointmentsInfo.AppendLine($"{appointment.User.Name}, {appointment.Date}, {appointment.Time}");
                         }
 
-                        
+
                         MessageBox.Show($"Запис про прийом успішно видалено.\n\n{deletedAppointmentInfo}\n{remainingAppointmentsInfo}");
 
-                        ShowInfo(); 
+                        ShowInfo();
                     }
                 }
                 catch (Exception ex)
@@ -151,12 +151,17 @@ namespace WindowsFormsApp2.Forms
         //Реалізує додавання запису коритсувача
         private void btn_AddPatientWithAppointment_Click(object sender, EventArgs e)
         {
+            if (textBox_Name.Text == null || textBox_Name.Text == "" || comboBox_Service == null || comboBox_Service.SelectedItem == null)
+            {
+                MessageBox.Show("Будь ласка, введіть всі необхідні дані.");
+                return;
+            }
             
             string userName = textBox_Name.Text;
             string category = comboBox_Category.SelectedItem.ToString();
             string description = comboBox_Service.SelectedItem.ToString();
             string time = comboBox_Time.SelectedItem.ToString();
-            string date = dateTimePicker_Date.Value.ToString("yyyy-MM-dd");
+            string date = dateTimePicker_Date.Value.ToString("dd.MM.yyyy");
 
             
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(category) ||

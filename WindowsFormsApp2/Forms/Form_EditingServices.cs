@@ -134,12 +134,18 @@ namespace WindowsFormsApp2.Forms
         //Реалізує метод AddService класу Admin - додавання сервісу
         private void btnAddService_Click(object sender, EventArgs e)
         {
-            string name = tb_EditingCategory.Text;
-            string description = tb_EditingDescription.Text;
-            decimal price = Convert.ToDecimal(tb_EditingPrice.Text);
-
             try
             {
+                if (tb_EditingCategory.Text == "Введіть для редагування" || tb_EditingDescription.Text == "Введіть для редагування" || tb_EditingPrice.Text == "Введіть для редагування"
+                    || string.IsNullOrWhiteSpace(tb_EditingCategory.Text) || string.IsNullOrWhiteSpace(tb_EditingDescription.Text) || string.IsNullOrWhiteSpace(tb_EditingPrice.Text))
+                {
+                    MessageBox.Show("Заповніть всі поля!");
+                    return;
+                }
+                string name = tb_EditingCategory.Text;
+                string description = tb_EditingDescription.Text;
+                decimal price = Convert.ToDecimal(tb_EditingPrice.Text);
+                           
                 Administrator admin = new Administrator("Admin", "admin", "0000000000");
                 bool success = admin.AddService(name, description, price);
 

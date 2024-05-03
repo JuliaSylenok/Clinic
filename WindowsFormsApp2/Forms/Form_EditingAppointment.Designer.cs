@@ -88,6 +88,7 @@
             // 
             this.dgwMyAppointments.AllowUserToAddRows = false;
             this.dgwMyAppointments.AllowUserToDeleteRows = false;
+            this.dgwMyAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgwMyAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwMyAppointments.Location = new System.Drawing.Point(23, 258);
             this.dgwMyAppointments.Name = "dgwMyAppointments";

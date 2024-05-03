@@ -31,6 +31,11 @@ namespace WindowsFormsApp2.Forms
         {
             string name = textBoxLogin.Text.Trim();
             string password = textBoxPassword.Text;
+            if (name == "ПІБ" || password == "Введіть пароль")
+            {
+                MessageBox.Show("Заповніть всі поля!");
+                return;
+            }
 
             try
             {
