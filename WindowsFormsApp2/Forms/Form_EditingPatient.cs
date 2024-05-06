@@ -132,7 +132,7 @@ namespace WindowsFormsApp2.Forms
                         }
 
 
-                        MessageBox.Show($"Запис про прийом успішно видалено.\n\n{deletedAppointmentInfo}\n{remainingAppointmentsInfo}");
+                        MessageBox.Show($"Запис про прийом успішно видалено.\n\n{deletedAppointmentInfo}");
 
                         ShowInfo();
                     }
@@ -163,11 +163,19 @@ namespace WindowsFormsApp2.Forms
             string time = comboBox_Time.SelectedItem.ToString();
             string date = dateTimePicker_Date.Value.ToString("dd.MM.yyyy");
 
-            
+
+
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(category) ||
                 string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(time))
             {
                 MessageBox.Show("Будь ласка, введіть всі необхідні дані.");
+                return;
+            }
+
+            DateTime appointmentDateTime = dateTimePicker_Date.Value.Date + TimeSpan.Parse(time);
+            if (appointmentDateTime <= DateTime.Now)
+            {
+                MessageBox.Show("Неможливо зробити запис на минулу дату або час.");
                 return;
             }
 
