@@ -33,11 +33,6 @@ namespace WindowsFormsApp2.Classes
             {
                 throw new ArgumentException("Номера телефону не існує.");
             }
-            //if (!phoneNumber.All(char.IsDigit))
-            //{
-            //    throw new ArgumentException("Phone number must contain only digits.");
-            //}
-
             string userData = $"{name},{password},{phoneNumber}";
             AppendToFile(@"C:\VARIANT 19\2 course\Curse\WindowsFormsApp2\WindowsFormsApp2\users.txt", userData);
             return true;
@@ -81,10 +76,8 @@ namespace WindowsFormsApp2.Classes
                 }
             }
 
-            // Завантаження користувачів з файлу
             var users = LoadUsers(@"C:\VARIANT 19\2 course\Curse\WindowsFormsApp2\WindowsFormsApp2\users.txt");
 
-            // Перевірка наявності користувача в списку
             foreach (var userData in users)
             {
                 string[] userParts = userData.Split(',');
@@ -120,69 +113,3 @@ namespace WindowsFormsApp2.Classes
     }
 }
 
-
-//public bool Register(string name, string password, string phoneNumber)
-//{
-//    if (name.Length < 1 || name.Length > 20)
-//    {
-//        throw new ArgumentException("Назва має містити від 1 до 20 символів.");
-//    }
-
-//    if (password.Length < 1 || password.Length > 20)
-//    {
-//        throw new ArgumentException("Пароль має містити від 1 до 20 символів і містити лише буквено-цифрові символи.");
-//    }
-
-//    if (phoneNumber.Length != 10 || phoneNumber[0] != '0')
-//    {
-//        throw new ArgumentException("Номер телефону має містити 10 символів і починатися з «0».");
-//    }
-
-//    if (!phoneNumber.All(char.IsDigit))
-//    {
-//        throw new ArgumentException("Номер телефону має містити лише цифри.");
-//    }
-//    RegisteredUser newUser = new RegisteredUser(name, password, phoneNumber);
-//    Clinic.Instance.AddUser(newUser);
-
-//    SerializeUsers("users.json", Clinic.Instance.Users);
-
-//    return true; 
-//}
-
-//private string SerializeUsers(string filePath, List<User> users)
-//{
-//    try
-//    {
-//        string jsonData = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
-
-//        File.WriteAllText(filePath, jsonData);
-
-//        return "Users serialized successfully.";
-//    }
-//    catch (Exception ex)
-//    {
-//        return $"Під час серіалізації сталася помилка: {ex.Message}";
-//    }
-//}
-
-//public string AuthenticateUser(string name, string password)
-//{
-//    var adminUsers = LoadAdminUsers();
-//    foreach (var adminUser in adminUsers)
-//    {
-//        if (adminUser.Name == name && adminUser.Password == password)
-//        {
-//            return "admin";
-//        }
-//    }
-
-//    foreach (var user in Clinic.Instance.Users)
-//    {
-//        if (user is RegisteredUser registeredUser && registeredUser.Name == name && registeredUser.Password == password)
-//        {
-//            return "registered";
-//        }
-//    }
-//    return "not registered";
-//}

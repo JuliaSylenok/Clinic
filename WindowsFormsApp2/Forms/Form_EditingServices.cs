@@ -66,7 +66,7 @@ namespace WindowsFormsApp2.Forms
 
                 try
                 {
-                    Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                    Administrator admin = new Administrator("Admin", "admin1", "0000000000");
                     bool success = admin.EditService(serviceIndex, newName, newDescription, newPrice);
 
                     if (success)
@@ -110,7 +110,7 @@ namespace WindowsFormsApp2.Forms
 
                 try
                 {
-                    Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                    Administrator admin = new Administrator("Admin", "admin1", "0000000000");
                     bool success = admin.DeleteService(serviceIndex);
 
                     if (success)
@@ -146,7 +146,7 @@ namespace WindowsFormsApp2.Forms
                 string description = tb_EditingDescription.Text;
                 decimal price = Convert.ToDecimal(tb_EditingPrice.Text);
                            
-                Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                Administrator admin = new Administrator("Admin", "admin1", "0000000000");
                 bool success = admin.AddService(name, description, price);
 
                 if (success)

@@ -59,7 +59,7 @@ namespace WindowsFormsApp2.Forms
             }
             if (!Regex.IsMatch(password, @"^(?=.*[0-9])(?=.*[a-zA-Z]).{6,}$"))
             {
-                MessageBox.Show("Пароль має містити цифри, латинські літери та бути від 1 до 20 символів!");
+                MessageBox.Show("Пароль має містити цифри, латинські літери та бути від 6 до 20 символів!");
                 tbPassword.Text = "Введіть";
                 return;
             }

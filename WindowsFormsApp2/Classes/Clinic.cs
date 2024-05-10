@@ -10,6 +10,10 @@ namespace WindowsFormsApp2.Classes
     {
         private static Clinic instance;
 
+        public static string NameNow;
+        public static string Password;
+        public static string PhoneNumber;
+
         public static Clinic Instance
         {
             get
@@ -25,9 +29,6 @@ namespace WindowsFormsApp2.Classes
         public List<Appointment> Appointments { get; set; }
         public List<User> Users { get; set; }
 
-        public static string NameNow;
-        public static string Password;
-        public static string PhoneNumber;
 
         public static List<Appointment> RemainingAppointments { get; set; }
 

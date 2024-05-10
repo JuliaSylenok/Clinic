@@ -9,7 +9,8 @@ namespace WindowsFormsApp2.Classes
     // Клас RegisteredUser
     public class RegisteredUser : User, IRegisteredUser
     {
-        public RegisteredUser(string name, string password, string phoneNumber) : base(name, password, phoneNumber)
+        public RegisteredUser(string name, string password, string phoneNumber) : 
+            base(name, password, phoneNumber)
         {
         }
 
@@ -29,7 +30,6 @@ namespace WindowsFormsApp2.Classes
 
         public bool BookAppointment(string category, string description, string appointmentDate, string appointmentTime, List<Appointment> existingAppointments)
         {
-            // Перевірка наявності вільного часу для запису на прийом
             bool isAvailable = existingAppointments.All(appointment =>
                 appointment.Date != appointmentDate || appointment.Time != appointmentTime);
 
@@ -48,9 +48,6 @@ namespace WindowsFormsApp2.Classes
 
             return false;
         }
-
-        
-
 
         public bool RescheduleAppointment(Appointment appointment, string newDate, string newTime, List<Appointment> appointments)
         {
@@ -84,7 +81,6 @@ namespace WindowsFormsApp2.Classes
 
             return false;
         }
-
 
         public bool CancelAppointment(Appointment appointment, List<Appointment> appointments)
         {

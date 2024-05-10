@@ -115,7 +115,7 @@ namespace WindowsFormsApp2.Forms
 
                 try
                 {
-                    Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                    Administrator admin = new Administrator("Admin", "admin1", "0000000000");
                     bool success = admin.DeleteAppointment(date, time);
 
                     if (success)
@@ -181,7 +181,7 @@ namespace WindowsFormsApp2.Forms
 
             try
             {
-                Administrator admin = new Administrator("Admin", "admin", "0000000000");
+                Administrator admin = new Administrator("Admin", "admin1", "0000000000");
                 bool success = admin.AddAppointment(userName, category, date, time);
 
                 if (success)
