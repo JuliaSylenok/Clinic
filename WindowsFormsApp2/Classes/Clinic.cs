@@ -37,6 +37,7 @@ namespace WindowsFormsApp2.Classes
             Services = new List<Service>();
             Appointments = new List<Appointment>();
             Users = new List<User>();
+            RemainingAppointments = new List<Appointment>();
         }
 
         public void AddService(Service service)

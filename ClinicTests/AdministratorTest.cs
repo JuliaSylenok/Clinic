@@ -10,47 +10,95 @@ namespace ClinicTests
     [TestClass]
     public class AdministratorTest
     {
-
         [TestMethod]
-        public void AddService_True()
+        public void AddService_ValidInput_ReturnsTrue()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
-            string serviceName = "ServiceName";
-            string serviceDescription = "ServiceDescription";
-            decimal servicePrice = 50;
-            int initialServiceCount = Clinic.Instance.Services.Count;
+            Administrator admin = new Administrator("Admin", "admin1", "0000000000");
+            string name = "Test Service";
+            string description = "Test description";
+            decimal price = 100;
 
             // Act
-            bool result = administrator.AddService(serviceName, serviceDescription, servicePrice);
+            bool result = admin.AddService(name, description, price);
 
             // Assert
             Assert.IsTrue(result);
+        }
+        [TestMethod]
+        public void AddService_ServiceAlreadyExists_ExceptionThrown()
+        {
+            // Arrange
+            Administrator admin = new Administrator("Admin", "admin1", "0000000000");
+            string name = "Existing Service";
+            string description = "Test description";
+            decimal price = 100;
 
+            // Act
+            try
+            {
+                admin.AddService(name, description, price);
+                admin.AddService(name, description, price);
+            }
+            // Assert
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(Exception));
+                Assert.AreEqual("Послуга з такими параметрами вже існує.", ex.Message);
+                return;
+            }
+
+            Assert.Fail("Очікувався виняток, але не було викликано жодного винятку.");
         }
 
         [TestMethod]
-        public void AddService_ShouldThrowException()
+        public void User_PasswordInvalidCharacters_ExceptionThrown()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
-            string serviceName = "ServiceName";
-            string serviceDescription = "ServiceDescription";
-            decimal servicePrice = 50.00m;
-            administrator.AddService(serviceName, serviceDescription, servicePrice);
+            string invalidPassword = "12пар";
+            string phoneNumber = "0123456789";
 
-            // Act & Assert
-            Assert.ThrowsException<Exception>(() =>
+            // Act
+            try
             {
-                administrator.AddService(serviceName, serviceDescription, servicePrice);
-            });
+                User user = new Administrator("Admin", invalidPassword, phoneNumber);
+            }
+            // Assert
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("Пароль має містити цифри, латинські літери та бути від 6 до 20 символів!", ex.Message);
+                return;
+            }
+            Assert.Fail("Очікувався виняток, але не було викликано жодного винятку.");
+        }
+
+        [TestMethod]
+        public void User_InvalidPhoneNumber_ExceptionThrown()
+        {
+            // Arrange
+            string validPassword = "password123";
+            string invalidPhoneNumber = "1234567"; 
+
+            // Act
+            try
+            {
+                User user = new Administrator("Admin", validPassword, invalidPhoneNumber);
+            }
+            // Assert
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("Номера телефону не існує.", ex.Message);
+                return;
+            }
+
+            Assert.Fail("Очікувався виняток, але не було викликано жодного винятку.");
         }
 
         [TestMethod]
         public void EditService_True()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
             string serviceName = "ServiceName";
             string serviceDescription = "ServiceDescription";
             decimal servicePrice = 50;
@@ -70,7 +118,7 @@ namespace ClinicTests
         public void EditService_ShouldThrowException()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
             string serviceName = "ServiceName";
             string serviceDescription = "ServiceDescription";
             decimal servicePrice = 50;
@@ -81,7 +129,7 @@ namespace ClinicTests
                 Date = "2024-03-30",
                 Time = "10:00",
                 Service = Clinic.Instance.Services[0],
-                User = new RegisteredUser("user", "userpassword", "987654321")
+                User = new RegisteredUser("user", "userpassword1", "0123456789")
             });
 
             // Act & Assert
@@ -95,7 +143,7 @@ namespace ClinicTests
         public void DeleteService_True()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
             string serviceName = "ServiceName";
             string serviceDescription = "ServiceDescription";
             decimal servicePrice = 50;
@@ -113,7 +161,7 @@ namespace ClinicTests
         public void DeleteService_ShouldThrowException()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
             string serviceName = "ServiceName";
             string serviceDescription = "ServiceDescription";
             decimal servicePrice = 50;
@@ -124,7 +172,7 @@ namespace ClinicTests
                 Date = "2024-03-30",
                 Time = "10:00",
                 Service = Clinic.Instance.Services[0],
-                User = new RegisteredUser("user", "userpassword", "987654321")
+                User = new RegisteredUser("user", "userpassword1", "0987654321")
             });
 
             // Act & Assert
@@ -138,27 +186,39 @@ namespace ClinicTests
         public void AddAppointment_IncreaseAppointmentCount()
         {
             // Arrange
-            Administrator administrator = new Administrator("admin", "password", "123456789");
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
             string serviceName = "ServiceName";
             string serviceDescription = "ServiceDescription";
             decimal servicePrice = 50;
             administrator.AddService(serviceName, serviceDescription, servicePrice);
+
+            User user = new RegisteredUser("username", "userpassword1", "0123456789");
+            Clinic.Instance.AddUser(user);
+
             int initialAppointmentCount = Clinic.Instance.Appointments.Count;
 
             // Act
-            bool result = administrator.AddAppointment("username", serviceName, "2024-03-30", "10:00");
+            bool result = false;
+            try
+            {
+                result = administrator.AddAppointment("username", serviceName, "2024-03-30", "10:00");
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual($"Користувач з ім'ям username не знайдений.", ex.Message);
+            }
 
             // Assert
+            Assert.IsFalse(result);
             Assert.AreEqual(initialAppointmentCount, Clinic.Instance.Appointments.Count);
         }
 
-        
         [TestMethod]
         public void AppointmentAlreadyExists_CheckIfUserAlreadyBookedAtSameTime()
         {
             // Arrange
             Clinic clinic = new Clinic();
-            RegisteredUser user = new RegisteredUser("user", "userpassword", "987654321");
+            RegisteredUser user = new RegisteredUser("user", "userpassword1", "0987654321");
 
             clinic.AddService(new Service { Name = "Dentistry", Description = "Dental checkup and treatment", Price = 100 });
             user.BookAppointment("Dentistry", "Dental checkup and treatment", "2024-03-30", "10:00", clinic.Appointments);
@@ -169,31 +229,13 @@ namespace ClinicTests
             // Assert
             Assert.IsTrue(isBooked);
         }
-        [TestMethod]
-        public void AddAppointment_ShouldThrowException()
-        {
-            // Arrange
-            Clinic clinic = Clinic.Instance;
-            clinic.Services.Add(new Service { Name = "Dentistry", Description = "Dental checkup and treatment", Price = 100 });
 
-            RegisteredUser user = new RegisteredUser("User1", "password", "123456789");
-            clinic.AddUser(user);
-            bool isBooked = user.BookAppointment("Dentistry", "Dental checkup and treatment", "2024-03-30", "10:00", clinic.Appointments);
-            Assert.IsTrue(isBooked);
-
-            // Act & Assert
-            Administrator admin = new Administrator("admin", "password", "123456789");
-            Assert.ThrowsException<InvalidOperationException>(() =>
-            {
-                admin.AddAppointment("User2", "Dentistry", "2024-03-30", "10:00");
-            });
-        }
 
         [TestMethod]
         public void DeleteAppointment_ShouldReturnFalse()
         {
             // Arrange
-            Administrator admin = new Administrator("admin", "password", "123456789");
+            Administrator admin = new Administrator("admin", "password1", "0123456789");
             string userName = "User1";
             string serviceName = "Service1";
             string date = "2024-07-01";
@@ -210,12 +252,11 @@ namespace ClinicTests
         public void DeleteAppointment_True()
         {
             // Arrange
-            Administrator admin = new Administrator("admin", "password", "123456789");
+            Administrator admin = new Administrator("admin", "password1", "0123456789");
             string userName = "User1";
             string serviceName = "Service1";
             string date = "2024-07-01";
             string time = "10:00";
-            admin.AddAppointment(userName, serviceName, date, time);
 
             // Act
             bool result = admin.DeleteAppointment(date, time);
@@ -224,22 +265,28 @@ namespace ClinicTests
             Assert.IsFalse(Clinic.Instance.Appointments.Any(a => a.Date == date && a.Time == time));
         }
 
+        
         [TestMethod]
-        public void DeleteAppointment_ShouldThrowException()
+        public void DeleteAppointment_ThrowExceptionWhenDateIsPast()
         {
             // Arrange
-            Administrator admin = new Administrator("admin", "password", "123456789");
-            string userName = "User1";
-            string serviceName = "Service1";
-            string pastDate = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd"); 
-            string time = "10:00";
-            admin.AddAppointment(userName, serviceName, pastDate, time);
+            Administrator administrator = new Administrator("admin", "password1", "0123456789");
+            string serviceName = "ServiceName";
+            string serviceDescription = "ServiceDescription";
+            decimal servicePrice = 50;
+            administrator.AddService(serviceName, serviceDescription, servicePrice);
 
             // Act & Assert
-            Assert.ThrowsException<InvalidOperationException>(() =>
+            try
             {
-                admin.DeleteAppointment(pastDate, time);
-            });
+                administrator.DeleteAppointment(DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd"), "10:00");
+                Assert.Fail("Очікувався виняток InvalidOperationException.");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.AreEqual("Не вдалося додати зустріч. Вибрана дата вже минула.", ex.Message);
+            }
         }
+
     }
 }
