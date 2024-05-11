@@ -125,11 +125,9 @@ namespace ClinicTests
         {
             // Arrange
             Guest guest = new Guest();
-            var registeredUser = new RegisteredUser("TestUser", "password", "1234567890");
-            Clinic.Instance.Users.Add(registeredUser);
-
+            
             // Act
-            string result = guest.AuthenticateUser("TestUser", "password");
+            string result = guest.AuthenticateUser("Силенок Юлія Андріївна", "password123");
 
             // Assert
             Assert.AreEqual("registered", result);
