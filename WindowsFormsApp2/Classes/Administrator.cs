@@ -79,7 +79,6 @@ namespace WindowsFormsApp2.Classes
             }
         }
 
-       
         public bool AddAppointment(string userName, string serviceName, string date, string time)
         {
             if (Clinic.RemainingAppointments.Any(appointment => appointment.Date == date && appointment.Time == time))
@@ -107,7 +106,6 @@ namespace WindowsFormsApp2.Classes
                 throw new Exception($"Користувач з ім'ям {userName} не знайдений.");
             }
         }
-
 
         public bool DeleteAppointment(string date, string time)
         {

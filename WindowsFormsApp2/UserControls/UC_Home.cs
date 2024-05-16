@@ -31,9 +31,7 @@ namespace WindowsFormsApp2.UserControls
        
         //Функція для заповнення DatagridView наявними сервісам
         private void LoadServices()
-        {
-            
-            
+        {            
             string servicesInfo = clinic.PrintServices();
             string[] rows = servicesInfo.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 

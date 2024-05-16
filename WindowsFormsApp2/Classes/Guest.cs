@@ -37,7 +37,6 @@ namespace WindowsFormsApp2.Classes
             AppendToFile(@"C:\VARIANT 19\2 course\Curse\WindowsFormsApp2\WindowsFormsApp2\users.txt", userData);
             return true;
         }
-
         private void AppendToFile(string filePath, string data)
         {
             using (StreamWriter sw = File.AppendText(filePath))
@@ -45,7 +44,6 @@ namespace WindowsFormsApp2.Classes
                 sw.WriteLine(data);
             }
         }
-
         private List<string> LoadUsers(string filePath)
         {
             List<string> users = new List<string>();
@@ -62,9 +60,6 @@ namespace WindowsFormsApp2.Classes
             }
             return users;
         }
-
-        
-
         public string AuthenticateUser(string name, string password)
         {
             var adminUsers = LoadAdminUsers();
@@ -94,8 +89,6 @@ namespace WindowsFormsApp2.Classes
             }
             return "not registered";
         }
-
-
         private List<ClinicUser> LoadAdminUsers()
         {
             string jsonFilePath = @"C:\VARIANT 19\2 course\Curse\WindowsFormsApp2\WindowsFormsApp2\AdminUser.json";

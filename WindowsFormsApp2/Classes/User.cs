@@ -43,7 +43,6 @@ namespace WindowsFormsApp2.Classes
             get { return name; }
             set { name = value; }
         }
-
         public User(string name, string password, string phoneNumber)
         {
             Name = name;

@@ -66,7 +66,6 @@ namespace WindowsFormsApp2
         {
             if (btnLogin.Text == "Увійти")
             {
-                //this.Hide();
                 using (Form_Login fw = new Form_Login())
                 {
                     fw.ShowDialog();
@@ -82,11 +81,8 @@ namespace WindowsFormsApp2
                 fm1.btnAbout.Visible = true;
                 fm1.btnMyReception.Visible = false;
                 fm1.btnEditing.Visible = false;
-                fm1.ShowDialog();
-                
-            }
-
-            
+                fm1.ShowDialog();   
+            } 
             
         }
         
@@ -125,7 +121,6 @@ namespace WindowsFormsApp2
 
             btnHome.Visible = true;
         }
-
 
     }
 }

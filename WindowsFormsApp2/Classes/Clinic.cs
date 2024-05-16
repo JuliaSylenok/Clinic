@@ -28,8 +28,6 @@ namespace WindowsFormsApp2.Classes
         public List<Service> Services { get; set; }
         public List<Appointment> Appointments { get; set; }
         public List<User> Users { get; set; }
-
-
         public static List<Appointment> RemainingAppointments { get; set; }
 
         public Clinic()
@@ -65,7 +63,6 @@ namespace WindowsFormsApp2.Classes
         {
             return Appointments.Where(appointment => appointment.User.Name == userName).ToList();
         }
-
         public void DefaultService()
         {
             Clinic clinic = Clinic.Instance;

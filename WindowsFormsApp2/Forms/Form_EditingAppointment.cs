@@ -103,19 +103,6 @@ namespace WindowsFormsApp2.Forms
                     }
                     
                     string cancelledAppointmentInfo = $"Запис на прийом {selectedAppointment.Service.Name} на {selectedAppointment.Date} о {selectedAppointment.Time} скасовано успішно.";
-
-                    //// Формування рядка з інформацією про залишені записи після скасування
-                    //StringBuilder remainingAppointmentsInfo = new StringBuilder();
-                    //remainingAppointmentsInfo.AppendLine("Записи на прийом, які залишилися:");
-
-                    //foreach (var appointment in Clinic.RemainingAppointments)
-                    //{
-                    //    remainingAppointmentsInfo.AppendLine($"Дата: {appointment.Date}, Послуга: {appointment.Service.Name}, Час: {appointment.Time}");
-
-                    //}
-
-                    // Виведення інформації у MessageBox
-                    //MessageBox.Show($"{cancelledAppointmentInfo}\n\n{remainingAppointmentsInfo}");
                     MessageBox.Show($"{cancelledAppointmentInfo}");
 
                     Clinic.Instance.Appointments = Clinic.RemainingAppointments;
